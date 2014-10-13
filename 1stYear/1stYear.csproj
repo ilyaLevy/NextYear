@@ -49,6 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="cli_client.py" />
+    <None Include="exportDbSeed.linq" />
+    <None Include="FirstYear.linq" />
+    <None Include="readDBSeed - Copy.linq" />
+    <None Include="readDBSeed.linq" />
+    <None Include="simplifier.linq" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -13,53 +13,9 @@ namespace _1stYear
     {
         static void Main(string[] args)
         {
-            var sinkv2Root = @"C:\Users\maxlevy\Dropbox\Apps\FirstYear\sinkv2\Ilya, m3__2A96AA59-7C83-4CD6-946E-1CCE4DED7BBA\";
+            var freshPhotos = loadDynamicData();
 
-            var devices = new Tuple<string, string>[] {
-	            new Tuple<string,string>("max", "27F69006-E9BE-4B14-A056-CF1A9CE27A81__64D58B9C-CEA1-42AB-9A1A-C764EF159C1B"),
-	            new Tuple<string,string>("motoko", "4F9DA8D8-9B8C-4787-A30D-20A9D99BD4A1__D8BDFCC3-735E-43E0-A4BA-940F224838BF"),
-            };
-
-
-            var allXos = devices.Select(d=>
-                {
-                    var logFiles = Directory.EnumerateFiles(sinkv2Root + d.Item2, "*.tlog");
-
-                    return logFiles.Select((lf,i)=>
-                        {
-                            var dat = String.Format(@"C:\Users\maxlevy\AppData\Local\Temp\dataFrom_{0}_Log{1}.dat", d.Item1, i);
-        		            var xml = dat + ".xml";
-                            
-                            File.Copy(lf, dat, true);
-
-			                Process .Start(	@"C:\Dev\Quick\FirstYear\Translator.exe", String.Format("{0} {1}", dat, xml))
-                                    .WaitForExit();
-
-                            return Processor.extractXos(xml);
-
-                        }
-                        )
-                        .SelectMany(_=>_)
-                        .ToList();
-                }
-            )
-            .SelectMany(_ => _)
-            .ToList();
-
-            Console.WriteLine("Total XOs: {0}", allXos.Count());
-
-            var asdf = allXos.Where(_ => _.ObjectID == new Guid("CC585403-2DEB-450D-BD6F-CA5C9512B7A0")).ToList();
-
-            var freshPhotos = allXos.Where(_ => null != _.PictureNote
-                                                && null != _.PictureNote.Thumbnail)
-                            //.Where(_ => null != _ as XoJoy)
-                            .GroupBy(_ => _.ObjectID)
-                            .Select(_ => _.OrderByDescending(__ => __.Timestamp).First())
-                            .OrderBy(_ => _.Time)
-                            //.Select(_ => _ as XoJoy)
-                            .ToList()
-                            ;
-            Console.WriteLine("XOs with pictures {0}", freshPhotos.Count(), asdf);
+            Console.WriteLine("freshPhotos loaded: {0}", freshPhotos.Count());
 
 
             string dataFilename = @"C:\Dev\Quick\FirstYear\localDb.xml";
@@ -77,6 +33,60 @@ namespace _1stYear
 
             Processor.buildHtml(dataFilename, templateFilename, outputFilename);
 
+        }
+
+        private static IEnumerable<TransactionObject> loadDynamicData()
+        {
+            var sinkv2Root = @"C:\Users\maxlevy\Dropbox\Apps\FirstYear\sinkv2\Ilya, m3__2A96AA59-7C83-4CD6-946E-1CCE4DED7BBA\";
+
+            var devices = new Tuple<string, string>[] {
+	            new Tuple<string,string>("max", "27F69006-E9BE-4B14-A056-CF1A9CE27A81__64D58B9C-CEA1-42AB-9A1A-C764EF159C1B"),
+	            new Tuple<string,string>("motoko", "4F9DA8D8-9B8C-4787-A30D-20A9D99BD4A1__D8BDFCC3-735E-43E0-A4BA-940F224838BF"),
+            };
+
+
+            var allXos = devices.Select(d =>
+            {
+                var logFiles = Directory.EnumerateFiles(sinkv2Root + d.Item2, "*.tlog");
+
+                return logFiles.Select((lf, i) =>
+                {
+                    var dat = String.Format(@"C:\Users\maxlevy\AppData\Local\Temp\dataFrom_{0}_Log{1}.dat", d.Item1, i);
+                    var xml = dat + ".xml";
+
+                    File.Copy(lf, dat, true);
+
+                    Process.Start(@"C:\Dev\Quick\FirstYear\Translator.exe", String.Format("{0} {1}", dat, xml))
+                            .WaitForExit();
+
+                    return Processor.extractXos(xml);
+
+                }
+                    )
+                    .SelectMany(_ => _)
+                    .ToList();
+            }
+            )
+            .SelectMany(_ => _)
+            .ToList();
+
+            Console.WriteLine("Total XOs: {0}", allXos.Count());
+
+            var asdf = allXos.Where(_ => _.ObjectID == new Guid("CC585403-2DEB-450D-BD6F-CA5C9512B7A0"))
+                                .OrderBy(_ => _.Timestamp)
+                                .ToList();
+
+            var freshPhotos = allXos.Where(_ => null != _.PictureNote
+                                                && null != _.PictureNote.Thumbnail)
+                //.Where(_ => null != _ as XoJoy)
+                            .GroupBy(_ => _.ObjectID)
+                            .Select(_ => _.OrderByDescending(__ => __.Timestamp).First())
+                            .OrderBy(_ => _.Time)
+                //.Select(_ => _ as XoJoy)
+                            .ToList()
+                            ;
+
+            return freshPhotos;
         }
 
         static void updateLocalDb(IEnumerable<FYPhoto> freshPhotos, string dataFilename)

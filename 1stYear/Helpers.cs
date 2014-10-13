@@ -19,7 +19,7 @@ namespace _1stYear
 
             if( !myKey.Any() )
             {
-                return "";
+                return null;
             }
 
             if (null != myKey.Single().Attribute("NS.string"))

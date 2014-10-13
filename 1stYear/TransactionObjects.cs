@@ -11,6 +11,10 @@ namespace _1stYear
     {
         static readonly DateTime t0 = new DateTime(2001, 1, 1);
 
+
+        public int id { get; private set; }
+        public XElement xml { get; private set; }
+
         // properties common to all the XOs
         public Dictionary<string, XElement> data { get; private set; }
         public Guid ObjectID { get; private set; }
@@ -24,10 +28,12 @@ namespace _1stYear
 
         public string Note { get; private set; }
 
-
         protected TransactionObject(XElement xo)
         {
             this.data = null;
+
+            xml = xo;
+            id = Int16.Parse(xml.Attributes().Single().Value);
 
             xoClass = xo.keyAttr("$class");
 
@@ -35,7 +41,10 @@ namespace _1stYear
 
             Note = xo.keyAttr("Note");
 
-            Time = DateTime.Parse(xo.keyAttr("Time"));
+            if (null != xo.keyAttr("Time") )
+            {
+                Time = DateTime.Parse(xo.keyAttr("Time"));
+            }
             Timestamp = DateTime.Parse(xo.keyAttr("Timestamp"));
 
             var pn = xo.Elements("key").Where(_=>_.Value=="PictureNote");

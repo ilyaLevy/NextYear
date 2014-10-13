@@ -256,10 +256,13 @@ namespace _1stYear
 
 
             // move the attributes
+            // there is a special case when - keeping the first dicts clean
+            var root = xdoc.Element("root");
             xdoc.Descendants("dict")
-                .Where(_ => _.Elements()
-                            .Where(k => k.Name == "key"
-                                        && null != k.Attribute("val")).Count() == _.Elements().Count())
+                .Where(_ => _.Parent != root
+                            && _.Elements()
+                                .Where(k => k.Name == "key"
+                                            && null != k.Attribute("val")).Count() == _.Elements().Count())
                 .ToList()
                 .Select(_ =>
             {
@@ -319,19 +322,19 @@ namespace _1stYear
                             .Value;
 
                 var newFilename = Path.Combine(Path.GetTempPath(), f + "_.png");
-
                 if (!File.Exists(newFilename))
                 {
-                    File.Copy(_.Attribute("NS.data").Value, newFilename);
+                    File.Move(_.Attribute("NS.data").Value, newFilename);
+                    File.Move(_.Attribute("NS.data").Value + ".base64", newFilename + ".base64");
+
+                    _.Attribute("NS.data").Value = newFilename;
                 }
 
-                _.Attribute("NS.data").Value = newFilename;
 
                 return 0;
 
             })
             .Count();
-
 
 
             xdoc.Descendants("dict")
@@ -341,12 +344,20 @@ namespace _1stYear
                 .Count()
                 ;
 
+            // enumerate XOs
+            xdoc.Element("root").Elements("dict")
+                .Select((d, i) => { d.Add(new XAttribute("num", i)); return true; })
+                .Count()
+                ;
+
+
             xdoc.Save(filename + ".xml");
 
             return  xdoc.Element("root").Elements("dict")
-                    .GroupBy(_ => _.keyAttr("$class") + "_" + _.keyAttr("ObjectID"))
+                    //.GroupBy(_ => _.keyAttr("$class") + "_" + _.keyAttr("ObjectID"))
                     //.Where(gr=>gr.Any(g=>g.Descendants("key").Where(d=>d.Value == "Thumbnail").Any()))
-                    .Select(gr=>gr.OrderBy(g=>g.keyAttr("Timestamp")).Last());
+                    //.Select(gr=>gr.OrderBy(g=>g.keyAttr("Timestamp")).Last())
+                    ;
         }
 
         static void flatten(IEnumerable<XElement> keys, string v1, string v2)
