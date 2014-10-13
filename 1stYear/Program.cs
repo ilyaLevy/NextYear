@@ -13,26 +13,54 @@ namespace _1stYear
     {
         static void Main(string[] args)
         {
-            var freshPhotos = loadDynamicData();
+            var allXOs = new List<TransactionObject>();
 
-            Console.WriteLine("freshPhotos loaded: {0}", freshPhotos.Count());
+            allXOs.AddRange(loadDbseedData());
+            allXOs.AddRange(loadDynamicData());
+
+            var flt = allXOs
+                //.Where(_ => null != _ as XoJoy)
+                            .GroupBy(_ => _.ObjectID)
+                            .Select(_ => _.OrderByDescending(__ => __.Timestamp).First())
+                            .OrderBy(_ => _.Time)
+                //.Select(_ => _ as XoJoy)
+                            .ToList()
+                            ;
+
+            
+            //var freshXOs = loadDynamicData();
+
+            Console.WriteLine("Total XOs loaded: {0}, distinct: {1}", allXOs.Count(), flt.Count());
+
+
+            var asdf = allXOs.Where(_ => _.PictureNote.Thumbnail == null || _.PictureNote.Thumbnail == "").ToList();
 
 
             string dataFilename = @"C:\Dev\Quick\FirstYear\localDb.xml";
             
             // now update the local db - there is a chance the titles were changed
-            updateLocalDb(freshPhotos.Select(_ => new FYPhoto() {   title = _.Note ?? "",
-                                                                    id = _.PictureNote.FileName.ToString(),
-                                                                    thumbUrl = _.PictureNote.Thumbnail,
-                                                                    date = _.Time
-                                            }), dataFilename);
+            updateLocalDb(allXOs.Select(_ => new FYPhoto()
+            {
+                title = _.Note,
+                id = _.PictureNote.FileName.ToString(),
+                thumbUrl = _.PictureNote.Thumbnail,
+                date = _.Time
+            }), dataFilename);
 
             var templateFilename = @"C:\Dev\Quick\FirstYear\Ilya Daily, template.html";
-            var outputFilename = @"C:\Dev\Quick\FirstYear\Ilya Daily.html";
-
+            var outputFilename = @"C:\Dev\Quick\FirstYear\Ilya Daily_1.html";
 
             Processor.buildHtml(dataFilename, templateFilename, outputFilename);
+        }
 
+        private static IEnumerable<TransactionObject> loadDbseedData()
+        {
+            return XDocument.Load(@"C:\Dev\Quick\FirstYear\db\dbseed.xml")
+                            .Element("root")
+                            .Elements("photo")
+                            .Select(_ => TransactionObject.loadFromCache(_))
+                            .ToList()
+                            ;
         }
 
         private static IEnumerable<TransactionObject> loadDynamicData()
@@ -78,12 +106,12 @@ namespace _1stYear
 
             var freshPhotos = allXos.Where(_ => null != _.PictureNote
                                                 && null != _.PictureNote.Thumbnail)
-                //.Where(_ => null != _ as XoJoy)
-                            .GroupBy(_ => _.ObjectID)
-                            .Select(_ => _.OrderByDescending(__ => __.Timestamp).First())
-                            .OrderBy(_ => _.Time)
-                //.Select(_ => _ as XoJoy)
-                            .ToList()
+                ////.Where(_ => null != _ as XoJoy)
+                //            .GroupBy(_ => _.ObjectID)
+                //            .Select(_ => _.OrderByDescending(__ => __.Timestamp).First())
+                //            .OrderBy(_ => _.Time)
+                ////.Select(_ => _ as XoJoy)
+                //            .ToList()
                             ;
 
             return freshPhotos;
@@ -119,7 +147,6 @@ namespace _1stYear
             {
                 new XDocument(new XElement("root", curPhotos.Select(_ => _.toXElement()))).Save(dataFilename);
             }
-
 
             // generate the missing URLs now
             {

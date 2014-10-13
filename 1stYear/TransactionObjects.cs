@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,10 @@ namespace _1stYear
         public PictureNote PictureNote { get; private set; }
 
         public string Note { get; private set; }
+
+        protected TransactionObject()
+        {
+        }
 
         protected TransactionObject(XElement xo)
         {
@@ -126,6 +131,24 @@ namespace _1stYear
             return new TransactionObject(xo);
         }
 
+        public static TransactionObject loadFromCache(XElement ph)
+        {
+            var t = DateTime.Parse(ph.Attribute("date").Value);
+
+
+            return new TransactionObject()
+            {
+                Timestamp = t,
+                Time = t,
+                Note = ph.Attribute("title").Value,
+                ObjectID = Guid.Parse(ph.Attribute("id").Value),
+                PictureNote = PictureNote.loadFromCache(ph),
+                xoClass = ph.Attribute("src").Value.TrimEnd("s".ToCharArray()),
+            };
+
+        }
+
+
         public static TransactionObject loadXo(XElement xo)
         {
             var data = split(xo.Element("dict"));
@@ -195,6 +218,24 @@ namespace _1stYear
         public Guid ObjectID { get; private set; }
 
         //public int MediaType { get; private set; }
+
+        static public PictureNote loadFromCache(XElement ph)
+        {
+            var fn = Guid.Parse(Path.GetFileNameWithoutExtension(ph.Attribute("thumbUrl").Value));
+
+            return new PictureNote()
+            {
+                ActivityID = Guid.Parse(ph.Attribute("id").Value),
+                FileName = fn, //ph.Attribute("url").Value,
+                Thumbnail = ph.Attribute("thumbUrl").Value,
+                ObjectID = fn,
+            };
+
+        }
+        PictureNote()
+        {
+
+        }
 
         public PictureNote(XElement pn)
         {
