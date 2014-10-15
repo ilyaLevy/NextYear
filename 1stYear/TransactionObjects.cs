@@ -44,7 +44,7 @@ namespace _1stYear
 
             ObjectID = Guid.Parse(xo.keyAttr("ObjectID"));
 
-            Note = xo.keyAttr("Note");
+            Note = xo.keyAttr("Note") ?? "";
 
             if (null != xo.keyAttr("Time") )
             {
@@ -268,12 +268,20 @@ namespace _1stYear
         {
             var keys = pn.Descendants("key").ToList();
 
-            Thumbnail = keys.Single(_=>_.Value == "Thumbnail").Attribute("NS.data").Value;
-
-            FileName = new Guid(keys.Single(_ => _.Value == "FileName").Attributes().Single().Value);
-
             IsNew = Boolean.Parse(pn.keyAttr("IsNew"));
             Deleted = Boolean.Parse(pn.keyAttr("Deleted"));
+
+            try
+            {
+                Thumbnail = keys.Single(_ => _.Value == "Thumbnail").Attribute("NS.data").Value;
+            }
+            catch (Exception)
+            {
+                Thumbnail = pn.Descendants("data").Single().Value;
+            }
+
+
+            FileName = new Guid(keys.Single(_ => _.Value == "FileName").Attributes().Single().Value);
 
             var aid = pn.keyAttr("ActivityID");
             ActivityID = null == aid ? new Guid() : new Guid(aid);

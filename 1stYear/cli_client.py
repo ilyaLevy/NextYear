@@ -385,11 +385,11 @@ def main():
             tree.write(localDb)
             time.sleep(1)
 
-
-        #if( '' == photo.attrib['thumbUrl'] ):
-        #    print photo.attrib['id'], ' - thumb '
-        #    photo.set('thumbUrl',fyp.getSharedUrl(dbxRoot + photo.attrib['id'] + " (Mobile).jpg"))
-        #    tree.write('C:\\Dev\\Quick\\FirstYear\\localDb.xml')
+        if( '' == photo.attrib['thumbUrl'] ):
+            print photo.attrib['id'], ' - thumb '
+            photo.set('thumbUrl',fyp.getSharedUrl(dbxRoot + photo.attrib['id'] + " (Mobile).jpg"))
+            tree.write(localDb)
+            time.sleep(1)
 
     #sorted(p.attrib[0] for p in root.findall('photo'))
     # sorted(s.upper() for s in names if len(s) == 5)

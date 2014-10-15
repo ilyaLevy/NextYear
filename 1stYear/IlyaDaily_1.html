@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ilya, 1st month</title>
+
+    <link rel="shortcut icon" href="http://fancyapps.com/favicon.ico">
+
+    <style>
+	.masonry {
+  background: #EEE;
+  max-width: 640px;
+}
+
+.item {
+
+	margin-bottom: 10px;
+}
+	
+	.small { height: 200px; }
+.medium { height: 300px; }
+.large { height: 400px; }
+.gigante { height: 500px; }
+
+
+.imgTitle {
+	position: absolute;
+	background-color: #A7DBD8;
+	color: #F38630;
+	top: 90%;
+	left: 15px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: 700;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+        #container {
+			visibility: hidden;
+            background-color: black;
+        }
+
+        #grid {
+            background-color: #69D2E7;
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="http://tympanus.net/Development/GridLoadingEffects/css/default.css" />
+    <link rel="stylesheet" type="text/css" href="http://tympanus.net/Development/GridLoadingEffects/css/component.css" />
+
+    <script src="http://tympanus.net/Development/GridLoadingEffects/js/modernizr.custom.js"></script>
+
+    <style>
+        body {
+            background: #111;
+            overflow: hidden;
+        }
+
+        .wrap {
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .translate {
+            -webkit-animation: translate 2000ms cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite;
+            animation: translate 2000ms cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite;
+            bottom: 0;
+            height: 14px;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 14px;
+        }
+
+        .scale {
+            -webkit-animation: scale 2000ms cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite;
+            animation: scale 2000ms cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite;
+            height: 100%;
+            width: 100%;
+        }
+
+        .wrap:nth-child(1) {
+            -webkit-transform: rotate(320deg);
+            -ms-transform: rotate(320deg);
+            transform: rotate(320deg);
+        }
+
+            .wrap:nth-child(1) .translate,
+            .wrap:nth-child(1) .scale {
+                -webkit-animation-delay: 0ms;
+                animation-delay: 0ms;
+            }
+
+            .wrap:nth-child(1) .scale {
+                background: #ccff66;
+            }
+
+        .wrap:nth-child(2) {
+            -webkit-transform: rotate(280deg);
+            -ms-transform: rotate(280deg);
+            transform: rotate(280deg);
+        }
+
+            .wrap:nth-child(2) .translate,
+            .wrap:nth-child(2) .scale {
+                -webkit-animation-delay: -222.22222ms;
+                animation-delay: -222.22222ms;
+            }
+
+            .wrap:nth-child(2) .scale {
+                background: #66ffcc;
+            }
+
+        .wrap:nth-child(3) {
+            -webkit-transform: rotate(240deg);
+            -ms-transform: rotate(240deg);
+            transform: rotate(240deg);
+        }
+
+            .wrap:nth-child(3) .translate,
+            .wrap:nth-child(3) .scale {
+                -webkit-animation-delay: -444.44444ms;
+                animation-delay: -444.44444ms;
+            }
+
+            .wrap:nth-child(3) .scale {
+                background: #6666ff;
+            }
+
+        .wrap:nth-child(4) {
+            -webkit-transform: rotate(200deg);
+            -ms-transform: rotate(200deg);
+            transform: rotate(200deg);
+        }
+
+            .wrap:nth-child(4) .translate,
+            .wrap:nth-child(4) .scale {
+                -webkit-animation-delay: -666.66667ms;
+                animation-delay: -666.66667ms;
+            }
+
+            .wrap:nth-child(4) .scale {
+                background: #ff66cc;
+            }
+
+        .wrap:nth-child(5) {
+            -webkit-transform: rotate(160deg);
+            -ms-transform: rotate(160deg);
+            transform: rotate(160deg);
+        }
+
+            .wrap:nth-child(5) .translate,
+            .wrap:nth-child(5) .scale {
+                -webkit-animation-delay: -888.88889ms;
+                animation-delay: -888.88889ms;
+            }
+
+            .wrap:nth-child(5) .scale {
+                background: #ffcc66;
+            }
+
+        .wrap:nth-child(6) {
+            -webkit-transform: rotate(120deg);
+            -ms-transform: rotate(120deg);
+            transform: rotate(120deg);
+        }
+
+            .wrap:nth-child(6) .translate,
+            .wrap:nth-child(6) .scale {
+                -webkit-animation-delay: -1111.11111ms;
+                animation-delay: -1111.11111ms;
+            }
+
+            .wrap:nth-child(6) .scale {
+                background: #66ff66;
+            }
+
+        .wrap:nth-child(7) {
+            -webkit-transform: rotate(80deg);
+            -ms-transform: rotate(80deg);
+            transform: rotate(80deg);
+        }
+
+            .wrap:nth-child(7) .translate,
+            .wrap:nth-child(7) .scale {
+                -webkit-animation-delay: -1333.33333ms;
+                animation-delay: -1333.33333ms;
+            }
+
+            .wrap:nth-child(7) .scale {
+                background: #66ccff;
+            }
+
+        .wrap:nth-child(8) {
+            -webkit-transform: rotate(40deg);
+            -ms-transform: rotate(40deg);
+            transform: rotate(40deg);
+        }
+
+            .wrap:nth-child(8) .translate,
+            .wrap:nth-child(8) .scale {
+                -webkit-animation-delay: -1555.55556ms;
+                animation-delay: -1555.55556ms;
+            }
+
+            .wrap:nth-child(8) .scale {
+                background: #cc66ff;
+            }
+
+        .wrap:nth-child(9) {
+            -webkit-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+            .wrap:nth-child(9) .translate,
+            .wrap:nth-child(9) .scale {
+                -webkit-animation-delay: -1777.77778ms;
+                animation-delay: -1777.77778ms;
+            }
+
+            .wrap:nth-child(9) .scale {
+                background: #ff6666;
+            }
+
+        @-webkit-keyframes translate {
+            0% {
+                -webkit-transform: translate3d(-600%, 0, 0);
+                transform: translate3d(-600%, 0, 0);
+            }
+
+            50% {
+                -webkit-transform: translate3d(600%, 0, 0);
+                transform: translate3d(600%, 0, 0);
+            }
+
+            100% {
+                -webkit-transform: translate3d(-600%, 0, 0);
+                transform: translate3d(-600%, 0, 0);
+            }
+        }
+
+        @keyframes translate {
+            0% {
+                -webkit-transform: translate3d(-600%, 0, 0);
+                transform: translate3d(-600%, 0, 0);
+            }
+
+            50% {
+                -webkit-transform: translate3d(600%, 0, 0);
+                transform: translate3d(600%, 0, 0);
+            }
+
+            100% {
+                -webkit-transform: translate3d(-600%, 0, 0);
+                transform: translate3d(-600%, 0, 0);
+            }
+        }
+
+        @-webkit-keyframes scale {
+            0% {
+                -webkit-transform: translateZ(0) scale(0.75, 1);
+                transform: translateZ(0) scale(0.75, 1);
+            }
+
+            25% {
+                -webkit-transform: translateZ(0) scale(1.5, 0.5);
+                transform: translateZ(0) scale(1.5, 0.5);
+            }
+
+            50% {
+                -webkit-transform: translateZ(0) scale(0.75, 1);
+                transform: translateZ(0) scale(0.75, 1);
+            }
+
+            75% {
+                -webkit-transform: translateZ(0) scale(1.5, 0.5);
+                transform: translateZ(0) scale(1.5, 0.5);
+            }
+
+            100% {
+                -webkit-transform: translateZ(0) scale(0.75, 1);
+                transform: translateZ(0) scale(0.75, 1);
+            }
+        }
+
+        @keyframes scale {
+            0% {
+                -webkit-transform: translateZ(0) scale(0.75, 1);
+                transform: translateZ(0) scale(0.75, 1);
+            }
+
+            25% {
+                -webkit-transform: translateZ(0) scale(1.5, 0.5);
+                transform: translateZ(0) scale(1.5, 0.5);
+            }
+
+            50% {
+                -webkit-transform: translateZ(0) scale(0.75, 1);
+                transform: translateZ(0) scale(0.75, 1);
+            }
+
+            75% {
+                -webkit-transform: translateZ(0) scale(1.5, 0.5);
+                transform: translateZ(0) scale(1.5, 0.5);
+            }
+
+            100% {
+                -webkit-transform: translateZ(0) scale(0.75, 1);
+                transform: translateZ(0) scale(0.75, 1);
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div id="loading">
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+    </div>
+
+<h1>Ilya - First month</h1>
+
+    <!-- <ul class="grid effect-4" id="grid"> -->
+	<div id="container">
+
+        
+<div class='item'>
+    <h1>September 14</h1>
+    <a href='https://www.dropbox.com/s/hhl71cxd1q70fp0/B5AF0E36-7595-4276-A29C-4E54C58CB58E.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/r1it09fbjq4cqec/B5AF0E36-7595-4276-A29C-4E54C58CB58E%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Fancy eyelashes!</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/6god7iwbn5gmlae/49DE6B2F-D125-44B2-BE78-B6903031CE34.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/a7n0zlwt2vqv7ke/49DE6B2F-D125-44B2-BE78-B6903031CE34%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Coffee out</span></a></div>
+
+
+<div class='item'>
+    <h1>September 13</h1>
+    <a href='https://www.dropbox.com/s/eu9zs2a7cpxa51n/892B9AEC-BB93-4DB9-B462-CB6E3EAF3346.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/5v8t4a0yttzhygl/892b9aec-bb93-4db9-b462-cb6e3eaf3346%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>For the first time the kid was outside and not sleeping!</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/4cwsykr8abhcxff/1EDA1F4F-D31F-44CB-847E-204844E1FC17.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/gui7t9fftszmv5k/1EDA1F4F-D31F-44CB-847E-204844E1FC17%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Lunch</span></a></div>
+
+
+<div class='item'>
+    <h1>September 12</h1>
+    <a href='https://www.dropbox.com/s/uft80h4qm6z6a01/16B40DBC-E0CA-4F24-B51C-0BDBFA86D074.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/4bd19uild3ecg8v/16B40DBC-E0CA-4F24-B51C-0BDBFA86D074%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Masculine </span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/9pixzte3vdoghk6/71716416-DFB6-4ECD-B82F-7622EB748CE2.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/sfwm3ddmr90hvak/71716416-DFB6-4ECD-B82F-7622EB748CE2%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Breakfast</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/92b6e1flaopa870/2200BD74-CF05-401E-AF63-30FD55D4D1FC.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/u0elqxan4iyejkj/2200BD74-CF05-401E-AF63-30FD55D4D1FC%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>working from home, naked</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/mq9q45wmxbyxpc8/7DDEAEA0-BED7-4522-B5B7-3214008F4B2B.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/oy7vykjtdauw1bq/7DDEAEA0-BED7-4522-B5B7-3214008F4B2B%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Mouse-feeding</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/cssmv2a02dss9r6/71759D34-4879-4889-9234-F7339B69E078.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/ha9npjs9ulhlaz2/71759D34-4879-4889-9234-F7339B69E078%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>After a meal</span></a></div>
+
+
+<div class='item'>
+    <h1>September 11</h1>
+    <a href='https://www.dropbox.com/s/mgfaaq1vuhri5ie/B440D9EC-C26E-473F-880E-8833BD97737D.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/5oymg7s9q922zf3/B440D9EC-C26E-473F-880E-8833BD97737D%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Pampered by grandma </span></a></div>
+
+
+<div class='item'>
+    <h1>September 10</h1>
+    <a href='https://www.dropbox.com/s/41ffggpk9a5hmq1/A7DC3736-B938-40EE-AD35-10DCC7219BF7.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/gjo0e3ejqjnhv5y/A7DC3736-B938-40EE-AD35-10DCC7219BF7%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Awake at 4 in the morning</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/sndp5uq5xtxfbc7/BB2137E0-69BF-4AF4-A29F-C76D1351B302.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/zv5omyhrb9l4fao/BB2137E0-69BF-4AF4-A29F-C76D1351B302%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/09tmu61q2qdb9ca/ECBFBE50-53F9-411B-BC36-304EDF5C66D0.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/9yptptj9ikshblb/ecbfbe50-53f9-411b-bc36-304edf5c66d0%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Yofi! Finally did it!</span></a></div>
+
+
+<div class='item'>
+    <h1>September 9</h1>
+    <a href='https://www.dropbox.com/s/fbmu2wo8ha6hhn6/7BEB5D5C-345E-40F2-9903-78F35799DCFA.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/45kd9u4jrqlhqtl/7BEB5D5C-345E-40F2-9903-78F35799DCFA%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Midnight joy</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/2cx8x76qexonkw8/80E4DE78-B2BE-4720-9046-AC17E6027F5C.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/sxauc4c0g5o0dkh/80E4DE78-B2BE-4720-9046-AC17E6027F5C%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Desperate meal</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/25tnjiqbeugjrij/071623B4-1311-4974-B325-2F50B5754BD9.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/oyfiezdu3sxmwlr/071623B4-1311-4974-B325-2F50B5754BD9%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Grandma & grandpa visit again</span></a></div>
+
+
+<div class='item'>
+    <h1>September 8</h1>
+    <a href='https://www.dropbox.com/s/0hzh95h7bubii23/013CFE7A-AF0F-4B3D-A9FD-A7D479793C86.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/z8f6pnb5qu4lwid/013CFE7A-AF0F-4B3D-A9FD-A7D479793C86%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Lease keep that napkin, instead of scratching yourself! :)</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/5ojejpjjuxteyfb/FDEF66DD-E8ED-4DE3-9C61-64A4BEBF9EEA.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/bvsgpyak19dmgfr/FDEF66DD-E8ED-4DE3-9C61-64A4BEBF9EEA%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Fish is fed</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/5ys9tsmzxlkttyh/08C7F411-3BA0-42CC-8A79-17F5783111B6.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/51sp0l5o3wka6vk/08C7F411-3BA0-42CC-8A79-17F5783111B6%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Can I mark "sleep" finally? @6pm</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/789uc7aci0cpi4v/46826012-2360-44CA-AE32-6DCD7015B926.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/yf69v41puqdszvv/46826012-2360-44CA-AE32-6DCD7015B926%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Happy face</span></a></div>
+
+
+<div class='item'>
+    <h1>September 7</h1>
+    <a href='https://www.dropbox.com/s/jm7uyv8xorl1vww/1CAC1957-B441-4F28-B9FF-C4F37DEA3D16.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/pey9ot24a42r2es/1cac1957-b441-4f28-b9ff-c4f37dea3d16%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/rr4e0agxq3lkcdx/037E77C6-9AD3-47A3-85A3-1254D721696B.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/pdbmi9yeit66y4i/037E77C6-9AD3-47A3-85A3-1254D721696B%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Second time out!</span></a></div>
+
+
+<div class='item'>
+    <h1>September 6</h1>
+    <a href='https://www.dropbox.com/s/nqx1wr1xl36e9s4/A6585CBF-E349-459A-AD77-61B1B4DB2652.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/s17v2nxn6us36ds/A6585CBF-E349-459A-AD77-61B1B4DB2652%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>For the first time I could see Ilya looking into my eyes!</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/d2gxvvuos3w8nqc/30FE19E1-3E27-4495-9DCD-D381F2CD185B.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/jkfy1rx1n5p4hle/30FE19E1-3E27-4495-9DCD-D381F2CD185B%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Good morning!</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/pberugndj0gd852/121FCA94-D1C3-4E73-A95A-92A8466E37A5.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/o7exgk18ajimb7e/121FCA94-D1C3-4E73-A95A-92A8466E37A5%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>אב ובנו</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/r3p1rkxylfhxv95/8E25E1CB-5D90-430B-A82D-84832FD75A94.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/12mosio91o65qnv/8e25e1cb-5d90-430b-a82d-84832fd75a94%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Sleeping out, for the first time!</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/78kjw7tcbj32uf2/EE8D45D6-B5C6-422F-B862-82669F95CE12.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/7y54wbwwpwg3tss/EE8D45D6-B5C6-422F-B862-82669F95CE12%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Lunch</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/tk0i3tr2r43gb3t/83626694-FEB4-46A7-944D-A81E9515E791.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/jbzfqki1kpfa0o9/83626694-FEB4-46A7-944D-A81E9515E791%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>A young athlete </span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/jd3cwfxbgmvp7v5/3F9E9412-4A52-41DD-9068-B665A2C1C56A.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/3js9wjv7lgo6lsd/3F9E9412-4A52-41DD-9068-B665A2C1C56A%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Auntie Mariko visits</span></a></div>
+
+
+<div class='item'>
+    <h1>September 5</h1>
+    <a href='https://www.dropbox.com/s/fij76n0wgpddeim/1C701F16-211D-41AD-8C7D-3A9A0C6ED369.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/ldejn3z1picigzj/1C701F16-211D-41AD-8C7D-3A9A0C6ED369%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Breakfast time</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/cse41mh6ao0xpvg/4977E626-1425-44DC-B8F3-527A0F7ABE26.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/wkoxto1saljpmkq/4977E626-1425-44DC-B8F3-527A0F7ABE26%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Serious business</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/nvt95riaorlh6q4/46BDC68F-F6D1-448E-B898-738DF944ADD8.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/9k2nb6kjmamh2eh/46BDC68F-F6D1-448E-B898-738DF944ADD8%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>A hot day</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/x8s8fcenf9spgfh/7B78BD6B-C17D-4306-B0EE-073C8186B2D7.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/4i37s1fhle8gmi3/7B78BD6B-C17D-4306-B0EE-073C8186B2D7%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Finally knocked him out</span></a></div>
+
+
+<div class='item'>
+    <h1>September 4</h1>
+    <a href='https://www.dropbox.com/s/vgsg7t6eug5qkjd/563F26C2-2929-49B3-BF3B-72E2B3C9F2D3.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/ojpg8z5dfa6oq4o/563F26C2-2929-49B3-BF3B-72E2B3C9F2D3%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Ready for the bath</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/qbow7bx27dyq41z/874A7268-BF80-48A4-9B45-2DCD05F47A88.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/5qfxwendwjw3hec/874A7268-BF80-48A4-9B45-2DCD05F47A88%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Demanding</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/9v0cug3h3j73dmn/F6DB9290-BF05-43A5-B0C2-302BB4BAE920.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/tconn8h7sqf2dqv/F6DB9290-BF05-43A5-B0C2-302BB4BAE920%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Beastie boy</span></a></div>
+
+
+<div class='item'>
+    <h1>September 2</h1>
+    <a href='https://www.dropbox.com/s/w4qgmhjvmbxczt8/98339434-369D-4552-A6BB-4FC66C9C7EE8.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/i4dozuya19428nn/98339434-369D-4552-A6BB-4FC66C9C7EE8%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Midnight secret</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/ims460gpc12ie4y/0C79676F-9CB0-4C01-A828-4F8F8A9F0A9B.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/9jpknw3ry1kk06m/0C79676F-9CB0-4C01-A828-4F8F8A9F0A9B%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>After the night ends, before the day begins</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/2fjsesw06n9tj9i/7A6C41BC-F274-429F-ABB1-E5CB2EA7A167.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/9qrp9xaksgo42tq/7A6C41BC-F274-429F-ABB1-E5CB2EA7A167%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>breakfast with my son</span></a></div>
+
+
+<div class='item'>
+    <h1>September 1</h1>
+    <a href='https://www.dropbox.com/s/mze8gonnmx5na3f/8FAC574A-3405-4FE5-9476-1C425CAA0531.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/1evqzrki6s7syn8/8FAC574A-3405-4FE5-9476-1C425CAA0531%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>HAPPY BIRTHDAY, MOM! </span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/5bpqtti1jdni3pu/4B248B2D-645B-449C-84F5-977FB66F5D6F.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/3vnp0y70ll3ye99/4B248B2D-645B-449C-84F5-977FB66F5D6F%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Thank you my husband and son for the happiest birthday!</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/s52tod91vucs6ue/CACB9C46-CCE5-485A-886F-CE3249B62FB0.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/inhf1ahf8a7bhzb/CACB9C46-CCE5-485A-886F-CE3249B62FB0%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Pupa サナギ style works to calm him down</span></a></div>
+
+
+<div class='item'>
+    <h1>August 31</h1>
+    <a href='https://www.dropbox.com/s/8udkmxgwek3pxvj/7DD1363A-666A-4930-9D69-283F39CAD44E.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/x0huhzrsn3b5en4/7DD1363A-666A-4930-9D69-283F39CAD44E%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Not crying, just making an effort!</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/fovfj51exgfbh8l/F1B19EE5-B776-4C53-95B6-D6F2BA4678EB.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/pq06mo7kbejebdn/F1B19EE5-B776-4C53-95B6-D6F2BA4678EB%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+
+<div class='item'>
+    <h1>August 30</h1>
+    <a href='https://www.dropbox.com/s/txf3jousbtr7v4e/76905A28-297D-4597-BCE7-FD61D78BBFEC.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/k2u2aomz5b3t2db/76905a28-297d-4597-bce7-fd61d78bbfec%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>The new world record!</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/ftfx1h49j66ou5s/07D498BC-6706-419B-95C9-BAAA7538B0C0.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/new6uue53v91k12/07D498BC-6706-419B-95C9-BAAA7538B0C0%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Morning eyes</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/mn213d8wnu4r6os/2FEBDA32-DCCF-4697-A790-B7EEF0BAEDEA.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/phdoep5rla85hyc/2FEBDA32-DCCF-4697-A790-B7EEF0BAEDEA%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Ready?</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/r7i8l36sb77zoj6/01FA99E2-237E-4AAE-B162-E4230BD30216.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/rn1g0h3bnwlw73q/01FA99E2-237E-4AAE-B162-E4230BD30216%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+
+<div class='item'>
+    <h1>August 29</h1>
+    <a href='https://www.dropbox.com/s/flspt3s50ohy75c/1F09F78F-8E25-4440-8A0C-BECA38091607.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/kap99gnzyl5gkup/1F09F78F-8E25-4440-8A0C-BECA38091607%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Father and son</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/76c7gc5jkc9kflh/34BB87E8-1835-4706-A4AC-43394F2A1235.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/d0dj50bayqgu56w/34BB87E8-1835-4706-A4AC-43394F2A1235%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>瓜二つ</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/l4xr3fp9ce2k6qx/6099712A-1F18-4638-8957-7AE4CA01387D.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/6460rl6pril96df/6099712A-1F18-4638-8957-7AE4CA01387D%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>瓜二つ שתי תיפות מים</span></a></div>
+
+
+<div class='item'>
+    <h1>August 28</h1>
+    <a href='https://www.dropbox.com/s/tbottef6r4ipzym/479A9570-9701-4AFA-90F6-CE1D4D7ACAC2.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/r73o7elomul08zm/479A9570-9701-4AFA-90F6-CE1D4D7ACAC2%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Being scaled, take 1</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/w0qyfapfr4ou4in/658413E1-71D2-4BB8-9916-7C7B2C7E9DA7.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/nwdtg0ehyyk4eya/658413E1-71D2-4BB8-9916-7C7B2C7E9DA7%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Relaxing after the bath</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/t30omejtrx4vfeq/F4029444-D834-40D4-BC6B-75D18F4187F3.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/ase5d5vtmtfpnb5/F4029444-D834-40D4-BC6B-75D18F4187F3%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Working from home</span></a></div>
+
+
+<div class='item'>
+    <h1>August 27</h1>
+    <a href='https://www.dropbox.com/s/bgqfpyp2o9lxhjt/9FF48AE9-CDFF-493F-AE55-37D2F9C91A02.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/jzdtkc1o5tomqev/9FF48AE9-CDFF-493F-AE55-37D2F9C91A02%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/5nxgr726wqvhzjy/5F2C6E34-9056-4A2A-9E69-7AF61C5CFB27.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/5kttuw3itv5gwcc/5F2C6E34-9056-4A2A-9E69-7AF61C5CFB27%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Family dinner</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/fslgv2lj2voercv/AAC6EE43-6416-43B1-BF16-8E2CA53F19E7.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/wrvklpbpqunfibx/AAC6EE43-6416-43B1-BF16-8E2CA53F19E7%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Advanced sleeping technology</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/9o1bb1e6iyh8n0d/43A8314F-A9CF-4B1A-8898-150FAE7EA843.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/a9sbgfoljqvp7fi/43A8314F-A9CF-4B1A-8898-150FAE7EA843%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>No drinking problems</span></a></div>
+
+
+<div class='item'>
+    <h1>August 26</h1>
+    <a href='https://www.dropbox.com/s/5fjej0hz7y9rfwi/C7595712-66F5-4559-886A-EE01BABDFA84.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/a0effsssj3919w5/C7595712-66F5-4559-886A-EE01BABDFA84%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Grandpa visiting</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/de8vv5dn3sti87y/CB5E48CE-8978-42E6-A901-5D058B76041C.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/w342o50et951hrt/CB5E48CE-8978-42E6-A901-5D058B76041C%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Grandma trying to calm him down</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/y44vk5caagzwcv4/74213DC1-58F8-4FC5-8B67-2CFCB2B823E5.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/fqhpf7r5emfvchl/74213DC1-58F8-4FC5-8B67-2CFCB2B823E5%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Present from my cousin Hiroshi and his wife!</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/8y2v2r6qpnb3r1i/CF5367DF-FCB3-4B8B-AD21-17B75D3B2FD8.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/esqf493vuyfmfzu/CF5367DF-FCB3-4B8B-AD21-17B75D3B2FD8%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>A new vehicle! Thanks to Miwa and Hiroshi - Motoko's cousins!</span></a></div>
+
+
+<div class='item'>
+    <h1>August 25</h1>
+    <a href='https://www.dropbox.com/s/bxt6638ztnl3sgg/FFAC4C88-F266-4358-B617-012BBA6CAE71.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/jfr4xcgm8vj9j9d/FFAC4C88-F266-4358-B617-012BBA6CAE71%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>The first empty Formula can!</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/fhqqwuzglgyr19v/EB46CEFC-7CAD-4419-8237-3238C715659B.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/1lf18bjvdulid0v/EB46CEFC-7CAD-4419-8237-3238C715659B%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Finally knocked him down after a long nursing</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/lc6vy9myomxb7dv/430AEA3B-AA17-4096-9BB5-FDF0B1E210DB.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/38i1veegke3vfgo/430AEA3B-AA17-4096-9BB5-FDF0B1E210DB%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Another dinner of the family.</span></a></div>
+
+
+<div class='item'>
+    <h1>August 24</h1>
+    <a href='https://www.dropbox.com/s/wstuw3iyhnronn1/1AC74A23-697C-46A2-B5AB-C48ECAFA1C02.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/uky2p4xnslzwxhu/1AC74A23-697C-46A2-B5AB-C48ECAFA1C02%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/017shmot9a5dhkb/6A6F684B-C524-44FF-A59F-019D91700406.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/0d86a99jlkwmk1o/6A6F684B-C524-44FF-A59F-019D91700406%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/uiz062tjfv9i0e5/357D36CF-756C-41C3-ACEF-2DD81580B820.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/3ch7nbvkrz8v65p/357D36CF-756C-41C3-ACEF-2DD81580B820%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Spontaneous lunch</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/fb5ujcdzo5piyxe/05B3CF61-FEB0-41CD-93AA-740135B842CC.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/1xagg98bpx9qgr3/05B3CF61-FEB0-41CD-93AA-740135B842CC%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>After the meal</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/qo46mepedfybc1w/D6C6A3C8-0594-41EB-9C19-C2B82F835AD8.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/w8kw98en5dl4phu/D6C6A3C8-0594-41EB-9C19-C2B82F835AD8%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Before the meal</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/pu6sgqgugm104yk/A7879F19-3ECF-4C0F-93C5-9BE24E228977.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/0uz0gwsuclygd5e/A7879F19-3ECF-4C0F-93C5-9BE24E228977%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>The new arrangement - not so close to the window</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/hebpmxgehlyanot/0CB9E522-BB28-418B-835D-96B7E2A900E4.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/mofegu6h8x4jma6/0CB9E522-BB28-418B-835D-96B7E2A900E4%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Family dinner</span></a></div>
+
+
+<div class='item'>
+    <h1>August 23</h1>
+    <a href='https://www.dropbox.com/s/j2j1okx1vzt7b7l/791194AD-3255-47F6-94FA-6CDF31A67F91.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/0esgzptpzcuhnsf/791194AD-3255-47F6-94FA-6CDF31A67F91%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>A good dream</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/i3qyfnldtgw7gzl/D5318055-24E3-4284-A7D7-002C7066381D.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/d5f8wwxw6e1h3u7/D5318055-24E3-4284-A7D7-002C7066381D%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>A novice approach for putting babies asleep</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/7bw1gf4orf1d0b2/DD77498E-FCE6-430A-A3D3-E79CD7150F7A.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/oh9rkgatztm8srs/DD77498E-FCE6-430A-A3D3-E79CD7150F7A%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Fell asleep in the middle of a meal</span></a></div>
+
+
+<div class='item'>
+    <h1>August 22</h1>
+    <a href='https://www.dropbox.com/s/kb01midqki3alm9/E7E94648-1883-48C1-BB01-DD0871B904D0.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/7pc3oa5zbe1ts0s/e7e94648-1883-48c1-bb01-dd0871b904d0%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Dead asleep after dancing with You and I</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/dkf4jqmm41q8cwj/A628D515-807D-491A-8327-51F5FA397619.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/bsc8915ferlh9o2/A628D515-807D-491A-8327-51F5FA397619%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>It took me a while to complete the Naming Ceremony!</span></a></div>
+
+
+<div class='item'>
+    <h1>August 21</h1>
+    <a href='https://www.dropbox.com/s/gc561b48f4gzpr4/862F6C8B-E756-4898-911E-58A14B60F457.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/bwqln3r3l7q24tz/862F6C8B-E756-4898-911E-58A14B60F457%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>I'll kiss your ass, literally </span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/y643cf8r8vazxoy/7E027533-5344-4503-811D-41C2020D42DD.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/o6adun4xvnpcgdw/7E027533-5344-4503-811D-41C2020D42DD%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Where is the belly button?</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/nb3k6e3dqwujskg/A6E145EA-C510-4C20-993D-47051C95772A.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/u0xihq16hrqm3zj/a6e145ea-c510-4c20-993d-47051c95772a%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Right after the bath ;)</span></a></div>
+
+
+<div class='item'>
+    <h1>August 20</h1>
+    <a href='https://www.dropbox.com/s/r5hgzxea7crydhd/6DEEEC32-D7C2-4481-AEB5-91CA3D987CAC.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/ekssvqn4gqkltp9/6DEEEC32-D7C2-4481-AEB5-91CA3D987CAC%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Nice presents!</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/z33o38fia9219n1/1176A28A-D63B-459D-B4E8-BB82225575D1.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/6d2xl6u5d4hw687/1176A28A-D63B-459D-B4E8-BB82225575D1%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>We are ready to go home!!</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/754xt3cm0j0ywfx/1E4589C6-BE6B-43EB-8874-F9B90C4EAE1B.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/j0b5w5bq40khnih/1E4589C6-BE6B-43EB-8874-F9B90C4EAE1B%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Leaving the hospital! It's cool to wear a helmet, too vas the rear wheel is punctured!</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/suh0unru9yhwlfk/3D2A7DDE-7113-41CA-8A55-904ED0C4B24C.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/3fefo2u187nba67/3d2a7dde-7113-41ca-8a55-904ed0c4b24c%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/c3mhoruvoyac6h4/0B7FBEAD-F731-496B-B530-91F5AEA27549.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/ms800x41q2shv4z/0B7FBEAD-F731-496B-B530-91F5AEA27549%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/tayuozptrqjny7p/C28A787C-AEAB-48D0-9CC0-E4EDF8D1114A.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/dkfcg44qdxf7llt/C28A787C-AEAB-48D0-9CC0-E4EDF8D1114A%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/r55h5dpw3afu94z/98B50BA7-0975-47D2-9E97-4AED16DDF801.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/v4zb78o39warpys/98B50BA7-0975-47D2-9E97-4AED16DDF801%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Sleeping time</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/7q5x5vctr5vuqku/39bb1637-4a8b-4b02-84bf-0af6210c201c.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/kdcka5zz0l91jv2/39bb1637-4a8b-4b02-84bf-0af6210c201c%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Ready for the first bath</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/64n70e8o29kmp3e/325bbbe7-9d00-4254-b8af-bd040927d62e.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/d9fbsafyy60urgj/325bbbe7-9d00-4254-b8af-bd040927d62e%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>The place looks cozy</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/hnvz63zvao6fe3l/5316fb7e-3cb3-4856-8c9c-95aa07ad0832.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/oljfr3tcy8mtj6x/5316fb7e-3cb3-4856-8c9c-95aa07ad0832%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/sjc302n7facmgjs/2e71bff3-5673-436b-a9af-350646bad411.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/6t51b563t9p7on4/2e71bff3-5673-436b-a9af-350646bad411%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/vq6a44g6l9yoepz/bda53cd8-f59b-487d-a934-f9ca95845ca3.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/f446l1nrwja4o6a/bda53cd8-f59b-487d-a934-f9ca95845ca3%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/fwhsopc5enpk10l/f5d0a7f5-a82b-4901-8d41-5e31e8aa0304.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/j1m112esg7w0nl3/f5d0a7f5-a82b-4901-8d41-5e31e8aa0304%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/we9tb9n5ji31nuv/41e0684a-a28e-464e-b994-18a5dd1289cf.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/wmw40wutnksbx4c/41e0684a-a28e-464e-b994-18a5dd1289cf%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+
+<div class='item'>
+    <h1>August 19</h1>
+    <a href='https://www.dropbox.com/s/m6gm8fjdltrhlhe/2932000E-C17F-45A4-A44F-16A070262665.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/gy4stqxibhp9pl9/2932000E-C17F-45A4-A44F-16A070262665%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Photo by Ai Satake</span></a></div>
+
+
+<div class='item'>
+    <h1>August 18</h1>
+    <a href='https://www.dropbox.com/s/29fpkdr2h9q7vyp/09d1fe08-9272-4cba-ad3a-cfb443addea7.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/g7ve4kn2j6nkjaj/09d1fe08-9272-4cba-ad3a-cfb443addea7%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/mtirudpmdf1f4wy/7392fe17-d154-40bf-9138-253ada21f53b.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/3r70172mdtuucqr/7392fe17-d154-40bf-9138-253ada21f53b%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/315owrwwc9pog0q/64412762-0f31-45ac-b2ef-54b4462c5999.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/sh64fh0c6c1e6xt/64412762-0f31-45ac-b2ef-54b4462c5999%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/8qcy1k9gu6a43yc/9e6a5028-a727-40cc-8b10-e4e598a25b2d.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/17ustciufv4lbib/9e6a5028-a727-40cc-8b10-e4e598a25b2d%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/j57m4t703sf2w2a/2c4d65b5-4367-4129-a0d4-0d7ce20a0ece.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/gr5qehv54p8u68v/2c4d65b5-4367-4129-a0d4-0d7ce20a0ece%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/jtq0q1go5y91u6a/cf8f3db9-4927-44cb-b6dc-a83431aaf7c4.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/8mh9o2vr9v1xhvm/cf8f3db9-4927-44cb-b6dc-a83431aaf7c4%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/etubzvw41zxwgkv/4d1f8263-f81e-4e67-bf89-8a3607020c33.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/jfyos2y1020fgst/4d1f8263-f81e-4e67-bf89-8a3607020c33%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/z2dteuznocq0tnn/334faeb5-bcca-4a89-bb29-e160c031e866.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/pw4mrkx790dqqub/334faeb5-bcca-4a89-bb29-e160c031e866%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+
+<div class='item'>
+    <h1>August 17</h1>
+    <a href='https://www.dropbox.com/s/54bzjkvcp6kkjqy/8AD1B879-0435-429B-B392-53A687485B80.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/4z7z807am44206l/8ad1b879-0435-429b-b392-53a687485b80%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/69aqthkq3a399ng/EC08AA0D-16D7-4B8B-B5B8-DE3E27A8DB5D.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/06nq6s3add50t1x/EC08AA0D-16D7-4B8B-B5B8-DE3E27A8DB5D%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Brothers</span></a></div>
+
+
+<div class='item'>
+    <h1>August 16</h1>
+    <a href='https://www.dropbox.com/s/d5jd4gqg6mwn00d/A825597D-FC24-45C6-AB0F-7239CD0DC2A1.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/6ynxqql6gount42/A825597D-FC24-45C6-AB0F-7239CD0DC2A1%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>With aunt Naoko</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/19vcm9ag4v2mc33/071A2D4E-737D-4B1D-A7D9-6D23BCD62A4F.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/xfiio6h1u8is3lw/071A2D4E-737D-4B1D-A7D9-6D23BCD62A4F%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Family photo</span></a></div>
+
+
+<div class='item'>
+    <h1>August 15</h1>
+    <a href='https://www.dropbox.com/s/vpy3qjxgpxd232c/52A35A1E-079C-428C-99A8-2F5C675F5048.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/zlxlimymiqq6q7l/52a35a1e-079c-428c-99a8-2f5c675f5048%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>52 cm tall - 87%,                                      3630 gr - 67%</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/weed3jv3o3v7csv/BA454E3F-EE34-4576-B335-F65A568A7B7B.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/s6l3tr16umrp6z3/BA454E3F-EE34-4576-B335-F65A568A7B7B%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>It's been a hard days night</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/84rs4r9yqmgcum4/B7E6488C-B792-4769-AD3C-68F3CF877C94.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/ms2xdy49kyqzwg7/B7E6488C-B792-4769-AD3C-68F3CF877C94%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>The first contact</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/095o3hnd4nancsu/a2b2b2db-5c59-421d-b9b2-2c8e876ad2c3.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/qv8o5m7con5kwm5/a2b2b2db-5c59-421d-b9b2-2c8e876ad2c3%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/u2wt6hmoqabl7sw/05da91c7-71ec-4a81-a56f-a6f6cdfa6db5.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/uefcdj84lf6z3rn/05da91c7-71ec-4a81-a56f-a6f6cdfa6db5%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/wsqrtupbky4ywxf/94abe99d-1d9d-4730-a029-618c0e4aac42.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/fz98epkp6xb9uai/94abe99d-1d9d-4730-a029-618c0e4aac42%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/5zs1lu8ws7j4dhk/fe5708ae-ee66-460f-a1bc-d8af73739e7d.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/x79z49iws1mhn73/fe5708ae-ee66-460f-a1bc-d8af73739e7d%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/5ha35ctmh0t1xvm/16b1b506-ec5b-4fc5-84e0-121e27eba3ae.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/6ytjrwdxopjcfdf/16b1b506-ec5b-4fc5-84e0-121e27eba3ae%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/r2sshlsqcqy5dhq/fcfc60e0-f804-44a6-b18b-7ed8082ebf58.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/zt0mlc7eex43ejw/fcfc60e0-f804-44a6-b18b-7ed8082ebf58%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/t54i7ukw8ptcb56/bf0f5cdc-a636-49b2-9b1e-21b845078d40.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/evh470lytxa07kb/bf0f5cdc-a636-49b2-9b1e-21b845078d40%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/o79d10mh95g3jnn/b1570aa3-a553-4e59-8613-db2f6a373300.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/ndsz5pybp99l800/b1570aa3-a553-4e59-8613-db2f6a373300%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/w1w2l3vmjitdjy0/93eb4287-1fbb-4e66-a108-897824f13e03.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/9l90lr7y7xhktcl/93eb4287-1fbb-4e66-a108-897824f13e03%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/znaa6m7gb9eunp8/35a89ac5-3f5e-430b-bff1-9ae9687ec2e4.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/ywoy19agerceefz/35a89ac5-3f5e-430b-bff1-9ae9687ec2e4%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/itffsn4mwd8aef5/430d98ca-2f75-45ef-aca1-9837992e8f8b.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/jteh454dqxr789g/430d98ca-2f75-45ef-aca1-9837992e8f8b%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/dlcw6brqjbw8om8/cee900fc-fe3a-45ab-b326-e76c0ad29126.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/nrzn75h2wz44i22/cee900fc-fe3a-45ab-b326-e76c0ad29126%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+
+<div class='item'>
+    <h1>August 14</h1>
+    <a href='https://www.dropbox.com/s/5lsyjw051ntnsvr/B563F8B4-4961-44D1-B600-3170B0FA30FE.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/g6d4fpmoxxuxg2p/B563F8B4-4961-44D1-B600-3170B0FA30FE%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>The forecast for tomorrow looks good!</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/zbjgo8da0xjvhah/68CEE8C5-DEB9-4B04-88B6-E328DC2B3972.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/lw4irj1ie5fkg7a/68CEE8C5-DEB9-4B04-88B6-E328DC2B3972%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Other news for tomorrow</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/4tzesmffk5xmjcl/121A3244-10BA-4100-A7BC-3F2CD17D2C68.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/g85d3hirpzto0hg/121A3244-10BA-4100-A7BC-3F2CD17D2C68%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Other top stories for tomorrow</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/j25aw5bbs3qxsnm/E66036DB-9217-478B-8645-4CBB55115C94.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/tgb2y6tqyh0407f/E66036DB-9217-478B-8645-4CBB55115C94%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Other news in Japan</span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/j4xkjsiufadqkr4/15442617-BC9D-4638-9B91-F991E21CC46A.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/qkbgdytd9dfaav8/15442617-BC9D-4638-9B91-F991E21CC46A%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'>Other news in Israel </span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/i9nsxcspnrybxli/C3B029A4-8141-4C46-939F-CEA74CBD21B6.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/3cqzl14ksun75eg/C3B029A4-8141-4C46-939F-CEA74CBD21B6%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/bar7iihfc2poo9g/C939B7C0-F996-4D9B-92A1-8B0EB9F5CC15.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/k4pbsywiq3bzh92/C939B7C0-F996-4D9B-92A1-8B0EB9F5CC15%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/w57jpazd2sy79ts/8966670E-FE1D-40AA-ABCE-7DAC1697B581.jpg' target='_blank'>
+    <img class='thumbnail medium' src='https://www.dropbox.com/s/ehbrj5jnypkidv6/8966670E-FE1D-40AA-ABCE-7DAC1697B581%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/4gyms7oatbxeoj9/ABF17730-0D8F-4C41-837D-9904F6332DDB.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/md1d3s4xanfvs1g/ABF17730-0D8F-4C41-837D-9904F6332DDB%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/vzxtafr22qz0f6g/361c7902-175c-46c7-8cf8-5f4724657570.jpg' target='_blank'>
+    <img class='thumbnail ' src='https://www.dropbox.com/s/89fuh43nndpc9bk/361c7902-175c-46c7-8cf8-5f4724657570%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/qh4fezn3k2zjsc7/e8078632-803d-468b-89c4-119f061edb17.jpg' target='_blank'>
+    <img class='thumbnail large' src='https://www.dropbox.com/s/o5njwm9u4622hve/e8078632-803d-468b-89c4-119f061edb17%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+<div class='item'>
+    <h1></h1>
+    <a href='https://www.dropbox.com/s/mr9cfprdqrx48jn/8e6fb868-b742-400a-ab7f-c265eb1203fc.jpg' target='_blank'>
+    <img class='thumbnail small' src='https://www.dropbox.com/s/3tyimyzvvl7n7b3/8e6fb868-b742-400a-ab7f-c265eb1203fc%20%28Mobile%29.jpg?dl=1'/>
+  <span class='imgTitle hidden'></span></a></div>
+
+
+    </div>
+
+    <script src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
+    <script src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
+    <script src="http://tympanus.net/Development/GridLoadingEffects/js/classie.js"></script>
+    <script src="http://tympanus.net/Development/GridLoadingEffects/js/AnimOnScroll.js"></script>
+
+    <script>
+		var container = document.querySelector('#container');
+
+		var msnry;
+
+		imagesLoaded( container, function() {
+
+			document.getElementById('container').style.visibility = "visible";
+
+			document.getElementsByTagName("body")[0].style.overflow = "auto";
+			msnry = new Masonry( container, {
+											  // options
+											  columnWidth: 44,
+											  itemSelector: '.item',
+											  gutter: 10
+											});
+		});
+
+        new AnimOnScroll(document.getElementById('grid'), {
+            minDuration: 0.4,
+            maxDuration: 0.7,
+            viewportFactor: 0.2
+        });
+
+    </script>
+
+</body>
+</html>

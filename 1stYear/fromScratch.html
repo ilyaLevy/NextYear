@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Hello from Ilya</title>
+
+    <link rel="shortcut icon" href="http://fancyapps.com/favicon.ico">
+<style>
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body { font-family: sans-serif;
+background: darkgray;
+}
+
+.masonry {
+  background: #EEE;
+  max-width: 640px;
+}
+
+
+.item {
+
+	margin-bottom: 10px;
+}
+
+.item.w2 { width:  120px; }
+.item.w3 { width:  180px; }
+.item.w4 { width:  240px; }
+
+.item.h2 { height: 100px; }
+.item.h3 { height: 130px; }
+.item.h4 { height: 180px; }
+
+.small { height: 200px; }
+.medium { height: 300px; }
+.large { height: 400px; }
+.gigante { height: 500px; }
+
+.item1 {
+	float: left;
+
+	margin-bottom: 15px;
+}
+
+.imgTitle {
+	position: absolute;
+	background-color: #A7DBD8;
+	color: #F38630;
+	top: 90%;
+	left: 15px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: 700;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.imgTitle.hidden {
+	visibility: hidden;
+}
+
+
+</style>
+</head>
+<body>
+
+<a href="javascript:allAll('gigante')">All Big</a><br/>
+<a href="javascript:allAll('small')">All Small</a><br/>
+
+
+<div id="container">
+
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp2833.tmp.png'/>
+  <span class='imgTitle hidden'>copy</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1AFD.tmp.png'/>
+  <span class='imgTitle'>Walking by Zenpukujigawa</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1AEA.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp2821.tmp.png'/>
+  <span class='imgTitle'>有栖川記念公園@Hiroo</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp2832.tmp.png'/>
+  <span class='imgTitle'>Coffee with grandma Itoko and her friend Watanabe san</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1AD9.tmp.png'/>
+  <span class='imgTitle'>Pilates and dance class </span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp17BC.tmp.png'/>
+  <span class='imgTitle'>High contrast </span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp17AB.tmp.png'/>
+  <span class='imgTitle'>Morning sunbathing </span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp17AA.tmp.png'/>
+  <span class='imgTitle'>Can you do that?</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1799.tmp.png'/>
+  <span class='imgTitle'>It's not clear what mom did to the kid today but in the evening, after the bath he wanted to sleep more than to eat! This has never happened before!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1798.tmp.png'/>
+  <span class='imgTitle'>Who is adorable!?</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp178D.tmp.png'/>
+  <span class='imgTitle'>It's not sure what mom did to the kid today but he was wasted after 30cc - for the first time ever preferred sleep to food!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp2811.tmp.png'/>
+  <span class='imgTitle'>Quiet day for mom and son</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1778.tmp.png'/>
+  <span class='imgTitle'>Big enough for the new gear</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp238C.tmp.png'/>
+  <span class='imgTitle'>What's there in the window?</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1777.tmp.png'/>
+  <span class='imgTitle'>Family sleeping </span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1764.tmp.png'/>
+  <span class='imgTitle'>Tired of playing with the ball </span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1754.tmp.png'/>
+  <span class='imgTitle'>Getting ready for the winter</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp2367.tmp.png'/>
+  <span class='imgTitle'>Supper</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp2334.tmp.png'/>
+  <span class='imgTitle'>Come on buddy</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp2345.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp2368.tmp.png'/>
+  <span class='imgTitle'>Dinner</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp12EE.tmp.png'/>
+  <span class='imgTitle'>Thinking about the kindergartens we just checked on</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp2357.tmp.png'/>
+  <span class='imgTitle'>Perching chicken</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp11D7.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp11B6.tmp.png'/>
+  <span class='imgTitle'>Test</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp11B5.tmp.png'/>
+  <span class='imgTitle'>Morning nap</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp11FA.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp11E8.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp11A2.tmp.png'/>
+  <span class='imgTitle'>With granny Galia</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1191.tmp.png'/>
+  <span class='imgTitle'>Work and rest</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1180.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1E4B.tmp.png'/>
+  <span class='imgTitle'>Making faces 1</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1E4C.tmp.png'/>
+  <span class='imgTitle'>2</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1E5D.tmp.png'/>
+  <span class='imgTitle'>3</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1E5E.tmp.png'/>
+  <span class='imgTitle'>4</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1E6F.tmp.png'/>
+  <span class='imgTitle'>5</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp117F.tmp.png'/>
+  <span class='imgTitle'>A sunny morning</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp11F9.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1E3B.tmp.png'/>
+  <span class='imgTitle'>Knocked out</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1E2A.tmp.png'/>
+  <span class='imgTitle'>Russian lunch</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\2FF6CDA5-5978-4466-B452-8C7B35CB4B92.png'/>
+  <span class='imgTitle'>Finally meeting uncle Oleg!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\E0501E70-60BE-46C5-B8FF-61CEF277AE30.png'/>
+  <span class='imgTitle'>Baby model</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\D02840B4-FF3A-466C-AAEF-04B52142356A.png'/>
+  <span class='imgTitle'>The first toy</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\71F8FB83-7696-42B9-A005-67A568A93B0D.png'/>
+  <span class='imgTitle'>Elephant-spotting</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\91F3A602-D69C-4116-9A50-94CF9B42474E.png'/>
+  <span class='imgTitle'>靖国参拝</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\112D4C6D-5680-4402-BC4D-DBEDD91CA7D6.png'/>
+  <span class='imgTitle'>Morning ritual </span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\D294770E-D257-4282-9550-35257000B485.png'/>
+  <span class='imgTitle'>Learning to whistle</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\25B4C492-22DA-4049-9C34-CEBAE05C83A1.png'/>
+  <span class='imgTitle'>Too fast to catch on the camera</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\1B80F9F8-41FC-4752-859F-042B8A0AAD75.png'/>
+  <span class='imgTitle'>Walking with grandparents</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\855D4B5C-7784-4B1D-9797-05789DED2FB7.png'/>
+  <span class='imgTitle'>Family breakfast </span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp121C.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\39B609D3-DA32-4EF7-920B-924ED57A4367.png'/>
+  <span class='imgTitle'>Face to face ;)</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp122E.tmp.png'/>
+  <span class='imgTitle'>Feeding toy</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\DA44096C-4742-4675-BE6A-029BFFD29E3C.png'/>
+  <span class='imgTitle'>Finally... Wet was the last complaint</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\3DFDD68E-A526-4C3A-8FA8-7CD953207000.png'/>
+  <span class='imgTitle'>Push</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\A0138BBE-5D48-4B54-8E18-6C32CF25E94E.png'/>
+  <span class='imgTitle'>Chickpea is a really nice boy today - just eating and sleeping! Happy birthday!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\080D89C8-6E45-48E0-A399-E2317C5C5730.png'/>
+  <span class='imgTitle'>Why did I eat so much?</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\49DE6B2F-D125-44B2-BE78-B6903031CE34.png'/>
+  <span class='imgTitle'>Coffee out</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\B5AF0E36-7595-4276-A29C-4E54C58CB58E.png'/>
+  <span class='imgTitle'>Fancy eyelashes!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\1EDA1F4F-D31F-44CB-847E-204844E1FC17.png'/>
+  <span class='imgTitle'>Lunch</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\892B9AEC-BB93-4DB9-B462-CB6E3EAF3346.png'/>
+  <span class='imgTitle'>For the first time the kid was outside and not sleeping!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\71759D34-4879-4889-9234-F7339B69E078.png'/>
+  <span class='imgTitle'>After a meal</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\7DDEAEA0-BED7-4522-B5B7-3214008F4B2B.png'/>
+  <span class='imgTitle'>Mouse-feeding</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\2200BD74-CF05-401E-AF63-30FD55D4D1FC.png'/>
+  <span class='imgTitle'>working from home, naked</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\16B40DBC-E0CA-4F24-B51C-0BDBFA86D074.png'/>
+  <span class='imgTitle'>Masculine </span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\71716416-DFB6-4ECD-B82F-7622EB748CE2.png'/>
+  <span class='imgTitle'>Breakfast</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\B440D9EC-C26E-473F-880E-8833BD97737D.png'/>
+  <span class='imgTitle'>Pampered by grandma </span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\ECBFBE50-53F9-411B-BC36-304EDF5C66D0.png'/>
+  <span class='imgTitle'>Yofi! Finally did it!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\BB2137E0-69BF-4AF4-A29F-C76D1351B302.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\A7DC3736-B938-40EE-AD35-10DCC7219BF7.png'/>
+  <span class='imgTitle'>Awake at 4 in the morning</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\071623B4-1311-4974-B325-2F50B5754BD9.png'/>
+  <span class='imgTitle'>Grandma & grandpa visit again</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\80E4DE78-B2BE-4720-9046-AC17E6027F5C.png'/>
+  <span class='imgTitle'>Desperate meal</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\7BEB5D5C-345E-40F2-9903-78F35799DCFA.png'/>
+  <span class='imgTitle'>Midnight joy</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\46826012-2360-44CA-AE32-6DCD7015B926.png'/>
+  <span class='imgTitle'>Happy face</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\08C7F411-3BA0-42CC-8A79-17F5783111B6.png'/>
+  <span class='imgTitle'>Can I mark "sleep" finally? @6pm</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\FDEF66DD-E8ED-4DE3-9C61-64A4BEBF9EEA.png'/>
+  <span class='imgTitle'>Fish is fed</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\013CFE7A-AF0F-4B3D-A9FD-A7D479793C86.png'/>
+  <span class='imgTitle'>Lease keep that napkin, instead of scratching yourself! :)</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\037E77C6-9AD3-47A3-85A3-1254D721696B.png'/>
+  <span class='imgTitle'>Second time out!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\1CAC1957-B441-4F28-B9FF-C4F37DEA3D16.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\3F9E9412-4A52-41DD-9068-B665A2C1C56A.png'/>
+  <span class='imgTitle'>Auntie Mariko visits</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\83626694-FEB4-46A7-944D-A81E9515E791.png'/>
+  <span class='imgTitle'>A young athlete </span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\EE8D45D6-B5C6-422F-B862-82669F95CE12.png'/>
+  <span class='imgTitle'>Lunch</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\8E25E1CB-5D90-430B-A82D-84832FD75A94.png'/>
+  <span class='imgTitle'>Sleeping out, for the first time!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\121FCA94-D1C3-4E73-A95A-92A8466E37A5.png'/>
+  <span class='imgTitle'>אב ובנו</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\30FE19E1-3E27-4495-9DCD-D381F2CD185B.png'/>
+  <span class='imgTitle'>Good morning!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\A6585CBF-E349-459A-AD77-61B1B4DB2652.png'/>
+  <span class='imgTitle'>For the first time I could see Ilya looking into my eyes!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\7B78BD6B-C17D-4306-B0EE-073C8186B2D7.png'/>
+  <span class='imgTitle'>Finally knocked him out</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\46BDC68F-F6D1-448E-B898-738DF944ADD8.png'/>
+  <span class='imgTitle'>A hot day</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\1C701F16-211D-41AD-8C7D-3A9A0C6ED369.png'/>
+  <span class='imgTitle'>Breakfast time</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\4977E626-1425-44DC-B8F3-527A0F7ABE26.png'/>
+  <span class='imgTitle'>Serious business</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\874A7268-BF80-48A4-9B45-2DCD05F47A88.png'/>
+  <span class='imgTitle'>Demanding</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\F6DB9290-BF05-43A5-B0C2-302BB4BAE920.png'/>
+  <span class='imgTitle'>Beastie boy</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\563F26C2-2929-49B3-BF3B-72E2B3C9F2D3.png'/>
+  <span class='imgTitle'>Ready for the bath</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\7A6C41BC-F274-429F-ABB1-E5CB2EA7A167.png'/>
+  <span class='imgTitle'>breakfast with my son</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\0C79676F-9CB0-4C01-A828-4F8F8A9F0A9B.png'/>
+  <span class='imgTitle'>After the night ends, before the day begins</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\98339434-369D-4552-A6BB-4FC66C9C7EE8.png'/>
+  <span class='imgTitle'>Midnight secret</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\CACB9C46-CCE5-485A-886F-CE3249B62FB0.png'/>
+  <span class='imgTitle'>Pupa サナギ style works to calm him down</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\4B248B2D-645B-449C-84F5-977FB66F5D6F.png'/>
+  <span class='imgTitle'>Thank you my husband and son for the happiest birthday!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\8FAC574A-3405-4FE5-9476-1C425CAA0531.png'/>
+  <span class='imgTitle'>HAPPY BIRTHDAY, MOM! </span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\F1B19EE5-B776-4C53-95B6-D6F2BA4678EB.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\7DD1363A-666A-4930-9D69-283F39CAD44E.png'/>
+  <span class='imgTitle'>Not crying, just making an effort!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\01FA99E2-237E-4AAE-B162-E4230BD30216.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\2FEBDA32-DCCF-4697-A790-B7EEF0BAEDEA.png'/>
+  <span class='imgTitle'>Ready?</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\07D498BC-6706-419B-95C9-BAAA7538B0C0.png'/>
+  <span class='imgTitle'>Morning eyes</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\76905A28-297D-4597-BCE7-FD61D78BBFEC.png'/>
+  <span class='imgTitle'>The new world record!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\6099712A-1F18-4638-8957-7AE4CA01387D.png'/>
+  <span class='imgTitle'>瓜二つ שתי תיפות מים</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\34BB87E8-1835-4706-A4AC-43394F2A1235.png'/>
+  <span class='imgTitle'>瓜二つ</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\1F09F78F-8E25-4440-8A0C-BECA38091607.png'/>
+  <span class='imgTitle'>Father and son</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\F4029444-D834-40D4-BC6B-75D18F4187F3.png'/>
+  <span class='imgTitle'>Working from home</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\658413E1-71D2-4BB8-9916-7C7B2C7E9DA7.png'/>
+  <span class='imgTitle'>Relaxing after the bath</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\479A9570-9701-4AFA-90F6-CE1D4D7ACAC2.png'/>
+  <span class='imgTitle'>Being scaled, take 1</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\43A8314F-A9CF-4B1A-8898-150FAE7EA843.png'/>
+  <span class='imgTitle'>No drinking problems</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\AAC6EE43-6416-43B1-BF16-8E2CA53F19E7.png'/>
+  <span class='imgTitle'>Advanced sleeping technology</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\9FF48AE9-CDFF-493F-AE55-37D2F9C91A02.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\5F2C6E34-9056-4A2A-9E69-7AF61C5CFB27.png'/>
+  <span class='imgTitle'>Family dinner</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\CF5367DF-FCB3-4B8B-AD21-17B75D3B2FD8.png'/>
+  <span class='imgTitle'>A new vehicle! Thanks to Miwa and Hiroshi - Motoko's cousins!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\74213DC1-58F8-4FC5-8B67-2CFCB2B823E5.png'/>
+  <span class='imgTitle'>Present from my cousin Hiroshi and his wife!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\C7595712-66F5-4559-886A-EE01BABDFA84.png'/>
+  <span class='imgTitle'>Grandpa visiting</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\CB5E48CE-8978-42E6-A901-5D058B76041C.png'/>
+  <span class='imgTitle'>Grandma trying to calm him down</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\430AEA3B-AA17-4096-9BB5-FDF0B1E210DB.png'/>
+  <span class='imgTitle'>Another dinner of the family.</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\EB46CEFC-7CAD-4419-8237-3238C715659B.png'/>
+  <span class='imgTitle'>Finally knocked him down after a long nursing</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\FFAC4C88-F266-4358-B617-012BBA6CAE71.png'/>
+  <span class='imgTitle'>The first empty Formula can!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\0CB9E522-BB28-418B-835D-96B7E2A900E4.png'/>
+  <span class='imgTitle'>Family dinner</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\A7879F19-3ECF-4C0F-93C5-9BE24E228977.png'/>
+  <span class='imgTitle'>The new arrangement - not so close to the window</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\D6C6A3C8-0594-41EB-9C19-C2B82F835AD8.png'/>
+  <span class='imgTitle'>Before the meal</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\05B3CF61-FEB0-41CD-93AA-740135B842CC.png'/>
+  <span class='imgTitle'>After the meal</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\357D36CF-756C-41C3-ACEF-2DD81580B820.png'/>
+  <span class='imgTitle'>Spontaneous lunch</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\1AC74A23-697C-46A2-B5AB-C48ECAFA1C02.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\6A6F684B-C524-44FF-A59F-019D91700406.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\DD77498E-FCE6-430A-A3D3-E79CD7150F7A.png'/>
+  <span class='imgTitle'>Fell asleep in the middle of a meal</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\D5318055-24E3-4284-A7D7-002C7066381D.png'/>
+  <span class='imgTitle'>A novice approach for putting babies asleep</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\791194AD-3255-47F6-94FA-6CDF31A67F91.png'/>
+  <span class='imgTitle'>A good dream</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\A628D515-807D-491A-8327-51F5FA397619.png'/>
+  <span class='imgTitle'>It took me a while to complete the Naming Ceremony!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\E7E94648-1883-48C1-BB01-DD0871B904D0.png'/>
+  <span class='imgTitle'>Dead asleep after dancing with You and I</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\A6E145EA-C510-4C20-993D-47051C95772A.png'/>
+  <span class='imgTitle'>Right after the bath ;)</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\7E027533-5344-4503-811D-41C2020D42DD.png'/>
+  <span class='imgTitle'>Where is the belly button?</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\862F6C8B-E756-4898-911E-58A14B60F457.png'/>
+  <span class='imgTitle'>I'll kiss your ass, literally </span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\98B50BA7-0975-47D2-9E97-4AED16DDF801.png'/>
+  <span class='imgTitle'>Sleeping time</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp120C.tmp.png'/>
+  <span class='imgTitle'>The place looks cozy</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp120B.tmp.png'/>
+  <span class='imgTitle'>Ready for the first bath</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\0B7FBEAD-F731-496B-B530-91F5AEA27549.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\C28A787C-AEAB-48D0-9CC0-E4EDF8D1114A.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\3D2A7DDE-7113-41CA-8A55-904ED0C4B24C.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\1E4589C6-BE6B-43EB-8874-F9B90C4EAE1B.png'/>
+  <span class='imgTitle'>Leaving the hospital! It's cool to wear a helmet, too vas the rear wheel is punctured!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\1176A28A-D63B-459D-B4E8-BB82225575D1.png'/>
+  <span class='imgTitle'>We are ready to go home!!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\6DEEEC32-D7C2-4481-AEB5-91CA3D987CAC.png'/>
+  <span class='imgTitle'>Nice presents!</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\2932000E-C17F-45A4-A44F-16A070262665.png'/>
+  <span class='imgTitle'>Photo by Ai Satake</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\EC08AA0D-16D7-4B8B-B5B8-DE3E27A8DB5D.png'/>
+  <span class='imgTitle'>Brothers</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\8AD1B879-0435-429B-B392-53A687485B80.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\A825597D-FC24-45C6-AB0F-7239CD0DC2A1.png'/>
+  <span class='imgTitle'>With aunt Naoko</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\071A2D4E-737D-4B1D-A7D9-6D23BCD62A4F.png'/>
+  <span class='imgTitle'>Family photo</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\B7E6488C-B792-4769-AD3C-68F3CF877C94.png'/>
+  <span class='imgTitle'>The first contact</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\BA454E3F-EE34-4576-B335-F65A568A7B7B.png'/>
+  <span class='imgTitle'>It's been a hard days night</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp12A6.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1296.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1284.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1295.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1273.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1272.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1262.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1261.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp124F.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1250.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\52A35A1E-079C-428C-99A8-2F5C675F5048.png'/>
+  <span class='imgTitle'>52 cm tall - 87%,                                      3630 gr - 67%</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp12CB.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp12CA.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp12B9.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp12B8.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp12A7.tmp.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\15442617-BC9D-4638-9B91-F991E21CC46A.png'/>
+  <span class='imgTitle'>Other news in Israel </span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Dev\Quick\FirstYear\db\C3B029A4-8141-4C46-939F-CEA74CBD21B6.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\C939B7C0-F996-4D9B-92A1-8B0EB9F5CC15.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\8966670E-FE1D-40AA-ABCE-7DAC1697B581.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\ABF17730-0D8F-4C41-837D-9904F6332DDB.png'/>
+  <span class='imgTitle'></span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\68CEE8C5-DEB9-4B04-88B6-E328DC2B3972.png'/>
+  <span class='imgTitle'>Other news for tomorrow</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Dev\Quick\FirstYear\db\121A3244-10BA-4100-A7BC-3F2CD17D2C68.png'/>
+  <span class='imgTitle'>Other top stories for tomorrow</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Dev\Quick\FirstYear\db\E66036DB-9217-478B-8645-4CBB55115C94.png'/>
+  <span class='imgTitle'>Other news in Japan</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Dev\Quick\FirstYear\db\B563F8B4-4961-44D1-B600-3170B0FA30FE.png'/>
+  <span class='imgTitle'>The forecast for tomorrow looks good!</span></div>
+ 
+
+</div>
+
+<!--     <script src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
+ -->    <script src="http://masonry.desandro.com/js/masonry-docs.min.js"></script>
+	
+	<script src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
+	
+	<script>
+
+	function allAll(stl)
+	{
+		var thns = document.querySelectorAll('.thumbnail');
+		
+		for (var i = 0; i < thns.length; ++i) {
+		  var item = thns[i];  // Calling myNodeList.item(i) isn't necessary in JavaScript
+
+		  classie.remove( item, 'small' );
+		  classie.remove( item, 'medium' );
+		  classie.remove( item, 'large' );
+		  classie.remove( item, 'gigante' );
+
+		  // change size of item via class
+		  classie.toggle( item, stl );
+		  
+		}		
+		
+	  
+	  // trigger layout
+	  msnry.layout();
+	}
+	
+var container = document.querySelector('#container');
+var msnry;
+
+	imagesLoaded( container, function() {
+
+	  msnry = new Masonry( container, {
+  // options
+  columnWidth: 44,
+  itemSelector: '.item',
+  gutter: 10
+});
+	
+	} );
+
+eventie.bind( container, 'click', function( event ) {
+
+	
+  // don't proceed if item was not clicked on
+  if ( !classie.has( event.target, 'thumbnail' ) )
+  {
+    return;
+  }
+
+  // change size of item via class
+  classie.toggle( event.target, 'gigante' );
+
+  event.target.scrollIntoView(true);
+  
+  // trigger layout
+  msnry.layout();
+
+  event.target.scrollIntoView(true);
+});	
+	</script>
+
+	</body>
+</html>

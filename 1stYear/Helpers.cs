@@ -7,13 +7,25 @@ using System.Xml.Linq;
 
 namespace _1stYear
 {
-    class Helpers
-    {
-    }
-
     static class Aux
     {
-        public static string keyAttr( this XElement ele, string attrName )
+        public static string FormatEx(this string fmt, object m)
+        {
+            var ps = m.GetType()
+                        .GetProperties()
+                        .Select((_, pos) => new { _.Name, val = _.GetValue(m, null), pos })
+                        .ToList()
+                        ;
+
+            foreach (var p in ps)
+            {
+                fmt = fmt.Replace("{" + p.Name + "}", "{" + p.pos.ToString() + "}");
+            }
+
+            return String.Format(fmt, ps.Select(_ => _.val).ToArray());
+        }
+        
+        public static string keyAttr(this XElement ele, string attrName)
         {
             var myKey = ele.Elements("key").Where(k => k.Value == attrName);
 

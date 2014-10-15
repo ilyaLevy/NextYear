@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Humanizer;
 
 namespace _1stYear
 {
@@ -413,50 +414,6 @@ namespace _1stYear
 
 
 
-            // style #1
-            {
-                var formatTitle = "<li class='title-box'><h2>{0}</a></h2></li>\n";
-                var format = "<li><a target='_blank' href='{0}?dl=0'><img src='{1}?dl=1' alt='{2}'><h3>{2}</h3><br/>{3}</a></li>\n";
-
-
-                l.Select(_ =>
-                    _.Aggregate(new StringBuilder(String.Format(formatTitle, _.Key)),
-                                    (a, n) => a.Append(String.Format(format, n.url, n.thumbUrl, n.title, n.date))
-                                    ).ToString())
-                    ;
-            }
-
-
-            // style #2
-            {
-                var formatTitle = "<div class='item'><h2>{0}</h2></div>";
-                var format = @"
-	<div class='item'>
-		<div class='image'>
-			<img src='{1}?dl=1'/>
-	        <span class='title'>{2}</span>
-		</div> 
-	</div>";
-
-                l.Select(_ =>
-                    _.Aggregate(new StringBuilder(String.Format(formatTitle, _.Key)),
-                                    (a, n) => (a.Append(String.Format(format, n.url, n.thumbUrl, n.title, n.date)))
-                                    ).ToString())
-                    ;
-            }
-
-            // style #3
-            {
-                var formatTitle = "<div class='item w2'><h2>{0}</h2></div>";
-                var format = @"<div class='item'><a target='_blank' href={0}><img src='{1}?dl=1' alt='{2}'><span class='imgTitle'>{2}</span></a></div>";
-
-                l.Select(_ =>
-                    _.Aggregate(new StringBuilder(String.Format(formatTitle, _.Key)),
-                                    (a, n) => (a.Append(String.Format(format, n.url, n.thumbUrl, n.title, n.date)))
-                                    ).ToString())
-                    ;
-            }
-
             // style we eventually use
             {
                 var formatTitle = "<li><h1>{0}</h1></li>";
@@ -497,11 +454,185 @@ namespace _1stYear
                                     ).ToString())
                     ;
 
+
                 var add_items_here = "<!--##ADD ITEMS HERE##-->";
                 File.WriteAllText(outputFilename, File.ReadAllText(templateFilename).Replace(add_items_here, String.Join("\n", items)));
             }
         }
 
 
+        internal static void buildHtmlsOld(string dataFilename, string templateFilename, string outputFilename)
+        {
+
+            var headerFormat = @"
+<table style='width:100%'>
+    <tr>
+        <td style='text-align:left; padding-left:20px; width:20%;'><h2><a href='{beforeUrl}'>{before}</a></td>
+        <td>
+            <header class='codrops-header'>
+                <h1>Ilya's {Nth} Month</h1>
+            </header>
+        </td>
+        <td style='text-align:right; padding-right:20px; width:20%;'><h2><a href='{afterUrl}'>{after}</a></h2></td>
+    </tr>
+</table>
+";
+
+            var formatEx = @"
+<li class='title-box'><h2>{date}</h2></li>
+<li><a target='_blank' href='{url}?dl=0'>
+        <img src='{thumbUrl}?dl=1' alt='{title}'>
+        <h3>{title}</h3></a></li>
+";
+
+            var ldb = XDocument.Load(dataFilename);
+
+            var l = ldb.Descendants("photo").Select(_ => new
+            {
+                title = _.Attribute("title").Value,
+                date = DateTime.Parse(_.Attribute("date").Value),
+                id = _.Attribute("id").Value,
+                url = _.Attribute("url").Value,
+                thumbUrl = _.Attribute("thumbUrl").Value,
+            })
+                .GroupBy(_ => _.date.ToString("MMMM d"))
+                .OrderByDescending(_ => _.First().date)
+                ;
+
+            var curKey = "";
+            var items = l.Select((_, i) =>
+
+                    new
+                    {
+                        date = _.First().date,
+
+                        text = _.Aggregate(new StringBuilder(),
+                                            (a, n) =>
+                                            {
+                                                var ttl = "";
+
+                                                if (_.Key != curKey)
+                                                {
+                                                    curKey = _.Key;
+                                                    ttl = _.Key;
+                                                }
+
+                                                return a.Append(formatEx.FormatEx( new { url = n.url, thumbUrl = n.thumbUrl, title = n.title, date = ttl} )
+                                                                        .Replace("<h2></h2>","")
+                                                                        .Replace("<h3></h3>", ""));
+                                            }
+                                ).ToString()
+                    }
+                                ).ToList();
+
+            var add_header_here = "<!--##ADD HEADER HERE##-->";
+            var add_items_here = "<!--##ADD ITEMS HERE##-->";
+
+            var BD = new DateTime(2014, 8, 15);
+
+            items.GroupBy(_ => 1 + (_.date - BD).Days / 31)
+                .Select(m =>
+                {
+                    var before = m.Key == 1 ? "" : "earlier...";
+                    var after = m.Key == 1 + (DateTime.Now - BD).Days / 31 ? "" : "later...";
+
+                    var headerText = headerFormat.FormatEx(new
+                    {
+                        Nth = new String(m.Key.ToOrdinalWords().Select((c, i) => 0 == i ? Char.ToUpper(c) : c).ToArray()),
+
+                        before = before,
+                        after = after,
+
+                        beforeUrl = Path.GetFileName(String.Format(outputFilename, m.Key - 1)),
+                        afterUrl = Path.GetFileName(String.Format(outputFilename, m.Key + 1))
+                    }
+                                                                );
+
+                    var itemsText = String.Join("\n", m.Select(_ => _.text));
+
+                    File.WriteAllText(  String.Format(outputFilename, m.Key),
+                                        File.ReadAllText(templateFilename)
+                                            .Replace(add_header_here, headerText)
+                                            .Replace(add_items_here, itemsText)
+                                            );
+
+                    return true;
+                })
+                .Count()
+                ;
+        }
+
+
+        internal static void buildHtmls(string dataFilename, string templateFilename, string outputFilename)
+        {
+            var ldb = XDocument.Load(dataFilename);
+
+            var l = ldb.Descendants("photo").Select(_ => new
+            {
+                title = _.Attribute("title").Value,
+                date = DateTime.Parse(_.Attribute("date").Value),
+                id = _.Attribute("id").Value,
+                url = _.Attribute("url").Value,
+                thumbUrl = _.Attribute("thumbUrl").Value,
+            })
+                .GroupBy(_ => _.date.ToString("MMMM d"))
+                .OrderByDescending(_ => _.First().date)
+                ;
+
+
+
+            // style we eventually use
+            {
+                var format = @"
+<div class='item'>
+    <h1>{4}</h1>
+    <a href='{0}' target='_blank'>
+        <img class='thumbnail {3}' src='{1}?dl=1'/>
+        <span class='imgTitle'>{2}</span></a></div>
+";
+                								
+
+                var add_items_here = "<!--##ADD ITEMS HERE##-->";
+
+                var rnd = new Random();
+                var clss = new string[] { "", "small", "medium", "large" };
+
+                var curKey = "";
+
+                var items = l.Select((_,i) =>
+
+                        new { date = _.First().date,
+
+                                    text = _.Aggregate( new StringBuilder(),
+                                                        (a, n) => 
+                                                            {
+                                                                var ttl = "";
+
+                                                                if (_.Key != curKey)
+                                                                {
+                                                                    curKey = _.Key;
+                                                                    ttl = _.Key;
+                                                                }
+
+                                                                return a.Append(String.Format(format, n.url, n.thumbUrl, n.title, clss[rnd.Next(clss.Length)], ttl));
+                                                            }
+                                            ).ToString()
+                                    }
+                                    ).ToList();
+
+                items.GroupBy(_ => 1 + (_.date - new DateTime(2014, 8, 15)).Days / 31)
+                    .Select(m =>
+                    {
+                        var itms = String.Join("\n", m.Select(_=>_.text));
+
+                        File.WriteAllText(String.Format(outputFilename, m.Key), File.ReadAllText(templateFilename).Replace(add_items_here, String.Join("\n", itms)));
+
+                        return true;
+                    })
+                    .Count()
+                    ;
+
+            }
+        }
     }
 }

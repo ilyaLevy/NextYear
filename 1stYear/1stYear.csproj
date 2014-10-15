@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Humanizer">
+      <HintPath>..\packages\Humanizer.1.29.0\lib\portable-win+net40+sl50+wp8+wpa81\Humanizer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,9 +55,24 @@
     <None Include="cli_client.py" />
     <None Include="exportDbSeed.linq" />
     <None Include="FirstYear.linq" />
+    <None Include="packages.config" />
     <None Include="readDBSeed - Copy.linq" />
     <None Include="readDBSeed.linq" />
     <None Include="simplifier.linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fromScratch.html" />
+    <Content Include="Ilya Daily, new template.html" />
+    <Content Include="Ilya Daily, old template.html" />
+    <Content Include="Ilya Daily, org.html" />
+    <Content Include="Ilya Daily, template.html" />
+    <Content Include="Ilya Daily.html" />
+    <Content Include="IlyaDaily_1.html" />
+    <Content Include="IlyaDaily_2.html" />
+    <Content Include="IlyaDaily_C1.html" />
+    <Content Include="IlyaDaily_C2.html" />
+    <Content Include="Ilya_Daily_Oct7.html" />
+    <Content Include="mansion.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

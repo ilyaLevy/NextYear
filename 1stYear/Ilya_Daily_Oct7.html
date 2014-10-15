@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Hello from Ilya</title>
+
+    <link rel="shortcut icon" href="http://fancyapps.com/favicon.ico">
+
+    <style>
+        .imgTitle {
+            position: absolute;
+            background-color: #A7DBD8;
+            color: #F38630;
+            top: 90%;
+            left: 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 700;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+		.small { height: 200px; }
+		.medium { height: 300px; }
+		.large { height: 400px; }
+		.gigante { height: 500px; }
+
+        #grid {
+            background-color: #69D2E7;
+        }
+		
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="http://tympanus.net/Development/GridLoadingEffects/css/default.css" />
+    <link rel="stylesheet" type="text/css" href="http://tympanus.net/Development/GridLoadingEffects/css/component.css" />
+
+    <script src="http://tympanus.net/Development/GridLoadingEffects/js/modernizr.custom.js"></script>
+
+    <style>
+        body {
+            background: #111;
+            overflow: hidden;
+        }
+
+        .wrap {
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .translate {
+            -webkit-animation: translate 2000ms cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite;
+            animation: translate 2000ms cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite;
+            bottom: 0;
+            height: 14px;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 14px;
+        }
+
+        .scale {
+            -webkit-animation: scale 2000ms cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite;
+            animation: scale 2000ms cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite;
+            height: 100%;
+            width: 100%;
+        }
+
+        .wrap:nth-child(1) {
+            -webkit-transform: rotate(320deg);
+            -ms-transform: rotate(320deg);
+            transform: rotate(320deg);
+        }
+
+            .wrap:nth-child(1) .translate,
+            .wrap:nth-child(1) .scale {
+                -webkit-animation-delay: 0ms;
+                animation-delay: 0ms;
+            }
+
+            .wrap:nth-child(1) .scale {
+                background: #ccff66;
+            }
+
+        .wrap:nth-child(2) {
+            -webkit-transform: rotate(280deg);
+            -ms-transform: rotate(280deg);
+            transform: rotate(280deg);
+        }
+
+            .wrap:nth-child(2) .translate,
+            .wrap:nth-child(2) .scale {
+                -webkit-animation-delay: -222.22222ms;
+                animation-delay: -222.22222ms;
+            }
+
+            .wrap:nth-child(2) .scale {
+                background: #66ffcc;
+            }
+
+        .wrap:nth-child(3) {
+            -webkit-transform: rotate(240deg);
+            -ms-transform: rotate(240deg);
+            transform: rotate(240deg);
+        }
+
+            .wrap:nth-child(3) .translate,
+            .wrap:nth-child(3) .scale {
+                -webkit-animation-delay: -444.44444ms;
+                animation-delay: -444.44444ms;
+            }
+
+            .wrap:nth-child(3) .scale {
+                background: #6666ff;
+            }
+
+        .wrap:nth-child(4) {
+            -webkit-transform: rotate(200deg);
+            -ms-transform: rotate(200deg);
+            transform: rotate(200deg);
+        }
+
+            .wrap:nth-child(4) .translate,
+            .wrap:nth-child(4) .scale {
+                -webkit-animation-delay: -666.66667ms;
+                animation-delay: -666.66667ms;
+            }
+
+            .wrap:nth-child(4) .scale {
+                background: #ff66cc;
+            }
+
+        .wrap:nth-child(5) {
+            -webkit-transform: rotate(160deg);
+            -ms-transform: rotate(160deg);
+            transform: rotate(160deg);
+        }
+
+            .wrap:nth-child(5) .translate,
+            .wrap:nth-child(5) .scale {
+                -webkit-animation-delay: -888.88889ms;
+                animation-delay: -888.88889ms;
+            }
+
+            .wrap:nth-child(5) .scale {
+                background: #ffcc66;
+            }
+
+        .wrap:nth-child(6) {
+            -webkit-transform: rotate(120deg);
+            -ms-transform: rotate(120deg);
+            transform: rotate(120deg);
+        }
+
+            .wrap:nth-child(6) .translate,
+            .wrap:nth-child(6) .scale {
+                -webkit-animation-delay: -1111.11111ms;
+                animation-delay: -1111.11111ms;
+            }
+
+            .wrap:nth-child(6) .scale {
+                background: #66ff66;
+            }
+
+        .wrap:nth-child(7) {
+            -webkit-transform: rotate(80deg);
+            -ms-transform: rotate(80deg);
+            transform: rotate(80deg);
+        }
+
+            .wrap:nth-child(7) .translate,
+            .wrap:nth-child(7) .scale {
+                -webkit-animation-delay: -1333.33333ms;
+                animation-delay: -1333.33333ms;
+            }
+
+            .wrap:nth-child(7) .scale {
+                background: #66ccff;
+            }
+
+        .wrap:nth-child(8) {
+            -webkit-transform: rotate(40deg);
+            -ms-transform: rotate(40deg);
+            transform: rotate(40deg);
+        }
+
+            .wrap:nth-child(8) .translate,
+            .wrap:nth-child(8) .scale {
+                -webkit-animation-delay: -1555.55556ms;
+                animation-delay: -1555.55556ms;
+            }
+
+            .wrap:nth-child(8) .scale {
+                background: #cc66ff;
+            }
+
+        .wrap:nth-child(9) {
+            -webkit-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+            .wrap:nth-child(9) .translate,
+            .wrap:nth-child(9) .scale {
+                -webkit-animation-delay: -1777.77778ms;
+                animation-delay: -1777.77778ms;
+            }
+
+            .wrap:nth-child(9) .scale {
+                background: #ff6666;
+            }
+
+        @-webkit-keyframes translate {
+            0% {
+                -webkit-transform: translate3d(-600%, 0, 0);
+                transform: translate3d(-600%, 0, 0);
+            }
+
+            50% {
+                -webkit-transform: translate3d(600%, 0, 0);
+                transform: translate3d(600%, 0, 0);
+            }
+
+            100% {
+                -webkit-transform: translate3d(-600%, 0, 0);
+                transform: translate3d(-600%, 0, 0);
+            }
+        }
+
+        @keyframes translate {
+            0% {
+                -webkit-transform: translate3d(-600%, 0, 0);
+                transform: translate3d(-600%, 0, 0);
+            }
+
+            50% {
+                -webkit-transform: translate3d(600%, 0, 0);
+                transform: translate3d(600%, 0, 0);
+            }
+
+            100% {
+                -webkit-transform: translate3d(-600%, 0, 0);
+                transform: translate3d(-600%, 0, 0);
+            }
+        }
+
+        @-webkit-keyframes scale {
+            0% {
+                -webkit-transform: translateZ(0) scale(0.75, 1);
+                transform: translateZ(0) scale(0.75, 1);
+            }
+
+            25% {
+                -webkit-transform: translateZ(0) scale(1.5, 0.5);
+                transform: translateZ(0) scale(1.5, 0.5);
+            }
+
+            50% {
+                -webkit-transform: translateZ(0) scale(0.75, 1);
+                transform: translateZ(0) scale(0.75, 1);
+            }
+
+            75% {
+                -webkit-transform: translateZ(0) scale(1.5, 0.5);
+                transform: translateZ(0) scale(1.5, 0.5);
+            }
+
+            100% {
+                -webkit-transform: translateZ(0) scale(0.75, 1);
+                transform: translateZ(0) scale(0.75, 1);
+            }
+        }
+
+        @keyframes scale {
+            0% {
+                -webkit-transform: translateZ(0) scale(0.75, 1);
+                transform: translateZ(0) scale(0.75, 1);
+            }
+
+            25% {
+                -webkit-transform: translateZ(0) scale(1.5, 0.5);
+                transform: translateZ(0) scale(1.5, 0.5);
+            }
+
+            50% {
+                -webkit-transform: translateZ(0) scale(0.75, 1);
+                transform: translateZ(0) scale(0.75, 1);
+            }
+
+            75% {
+                -webkit-transform: translateZ(0) scale(1.5, 0.5);
+                transform: translateZ(0) scale(1.5, 0.5);
+            }
+
+            100% {
+                -webkit-transform: translateZ(0) scale(0.75, 1);
+                transform: translateZ(0) scale(0.75, 1);
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="loading">
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+    </div>
+
+	
+	
+	<div id="container">
+
+
+<div class='item'>
+  <img class='thumbnail medium' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp2833.tmp.png'/>
+  <span class='imgTitle hidden'>copy</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1AFD.tmp.png'/>
+  <span class='imgTitle'>Walking by Zenpukujigawa</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail ' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1AEA.tmp.png'/>
+  <span class='imgTitle'></span></div>
+
+  <div class='item'>
+<h1>October 7</h1>
+</div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp2821.tmp.png'/>
+  <span class='imgTitle'>有栖川記念公園@Hiroo</span></div>
+ 
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp2832.tmp.png'/>
+  <span class='imgTitle'>Coffee with grandma Itoko and her friend Watanabe san</span></div>
+
+  <div class='item'>
+<div style="width:600px; padding:30px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</div>
+</div>
+  
+<div class='item'>
+  <img class='thumbnail small' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp1AD9.tmp.png'/>
+  <span class='imgTitle'>Pilates and dance class </span></div>
+ 
+<div class='item'>
+  <img class='thumbnail large' src='file:///C:\Users\maxlevy\AppData\Local\Temp\tmp17BC.tmp.png'/>
+  <span class='imgTitle'>High contrast </span></div>
+</div>
+
+    <ul class="grid effect-4" id="grid1">
+
+        <li><h1>October 7</h1></li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/9djbbikcmgwbb4a/40ffdcd9-f30e-4484-abd5-2ebdeeab49fa.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/afa8dbi7egrlrp8/40ffdcd9-f30e-4484-abd5-2ebdeeab49fa%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>What's there in the window?</span>
+			</a>
+		</div>
+	</li>
+<li><h1>October 6</h1></li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/hw65sqgr5772g7v/69b60b74-6d73-4599-a7a6-8d9d640a54d6.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/wztcttealm17jk2/69b60b74-6d73-4599-a7a6-8d9d640a54d6%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>Family sleeping </span>
+			</a>
+		</div>
+	</li>
+<li><h1>October 5</h1></li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/qspr71tn1u832lz/df86e215-81be-4003-b9cc-b01cc1347b2e.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/9uoulsg741ib4cj/df86e215-81be-4003-b9cc-b01cc1347b2e%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>It's typhoon today- let's train for the winter!</span>
+			</a>
+		</div>
+	</li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/gt2xgylaq9unyks/8a282e49-791a-4b5e-af46-9b1f6ee9b974.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/b1j9cjutxeu9d7z/8a282e49-791a-4b5e-af46-9b1f6ee9b974%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>Tired of playing with the ball </span>
+			</a>
+		</div>
+	</li>
+<li><h1>October 4</h1></li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/ttzad33wml5v15j/3cfcfd22-758d-44a9-b303-9fd767670425.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/3p5l5v7l5fj7x0k/3cfcfd22-758d-44a9-b303-9fd767670425%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>Supper</span>
+			</a>
+		</div>
+	</li>
+<li><h1>October 2</h1></li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/tmjkd6624jvy181/1a1b2ff7-2d6e-41b0-a879-4f315eb2a474.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/mc1qwf9dwyl5bbl/1a1b2ff7-2d6e-41b0-a879-4f315eb2a474%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>Lunch</span>
+			</a>
+		</div>
+	</li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/db77lm5wd93mi77/548ff4bb-7640-410d-a990-a55fe0ba513b.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/dca8imklap94bs4/548ff4bb-7640-410d-a990-a55fe0ba513b%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>Come on buddy</span>
+			</a>
+		</div>
+	</li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/f0u69vypsx5y1ml/d83c35ce-940e-47a9-ae62-a1bdc6b752ea.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/9xke9vhr8ryo27k/d83c35ce-940e-47a9-ae62-a1bdc6b752ea%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>Big sister Sophia</span>
+			</a>
+		</div>
+	</li>
+<li><h1>September 30</h1></li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/brkg4tukcehkfwr/83ad509e-8977-4fc0-a2d0-558dee2b4624.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/ozoppu87f2xsz37/83ad509e-8977-4fc0-a2d0-558dee2b4624%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>Thinking about the kindergartens we just checked on</span>
+			</a>
+		</div>
+	</li>
+<li><h1>September 28</h1></li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/80nkt8skvi2bypv/1488dc06-9618-496c-b18b-1b4585a0a4eb.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/yzr2jpq6o0baby6/1488dc06-9618-496c-b18b-1b4585a0a4eb%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>Perching chicken</span>
+			</a>
+		</div>
+	</li>
+<li><h1>September 27</h1></li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/ttzad33wml5v15j/3cfcfd22-758d-44a9-b303-9fd767670425.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/3p5l5v7l5fj7x0k/3cfcfd22-758d-44a9-b303-9fd767670425%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>Test</span>
+			</a>
+		</div>
+	</li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/cyneb42yevqxlua/41C14CDC-001F-4693-8957-1E816A493961.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/31ojqydxwc1iqq5/41C14CDC-001F-4693-8957-1E816A493961%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>Morning nap</span>
+			</a>
+		</div>
+	</li>
+<li><h1>September 25</h1></li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/9rssxu2ipsxep5u/F3A04EB5-C575-4354-92FC-CA109BD73D64.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/0cfe9afwpvymg0r/F3A04EB5-C575-4354-92FC-CA109BD73D64%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>Work and rest</span>
+			</a>
+		</div>
+	</li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/v5bn3l62h35esej/B98728B2-6C1A-4FD5-AA07-C6DE14DD4126.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/ypd4q4vjhj4s6ip/B98728B2-6C1A-4FD5-AA07-C6DE14DD4126%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>With granny Galia</span>
+			</a>
+		</div>
+	</li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/lldrn6e8t094d1h/76157ce0-5062-4c4e-9b67-7630b59333bb.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/xdtf28o6rgsvp8u/76157ce0-5062-4c4e-9b67-7630b59333bb%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'></span>
+			</a>
+		</div>
+	</li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/gh5x6m8swolw7qa/df1b53be-a610-4f98-ab4a-0eaf014a95d0.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/ay4nzhhphpptbkt/df1b53be-a610-4f98-ab4a-0eaf014a95d0%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'></span>
+			</a>
+		</div>
+	</li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/2nmbluvs3eg7cmp/14219450-af50-4693-a8a9-0c076b882366.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/l76bxjl7l1nupv4/14219450-af50-4693-a8a9-0c076b882366%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>A break</span>
+			</a>
+		</div>
+	</li>
+<li><h1>September 24</h1></li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/qhgjqhcjqmqz1li/6831B132-1970-4220-BCEA-1361B2C0BAC1.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/qv7d56xfiz0fpnp/6831B132-1970-4220-BCEA-1361B2C0BAC1%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>A sunny morning</span>
+			</a>
+		</div>
+	</li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/s5d8mgwm4rypgqa/9DB4095D-26CA-4B18-9AA4-0C6D9F7CD104.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/ozrguk6a96opnzi/9DB4095D-26CA-4B18-9AA4-0C6D9F7CD104%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>Making faces 1</span>
+			</a>
+		</div>
+	</li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/m7i9ir61nqi8oil/909CAB10-C722-4A03-9769-FDAC3E78C3DD.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/etxsqwmmk07ab7w/909CAB10-C722-4A03-9769-FDAC3E78C3DD%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>2</span>
+			</a>
+		</div>
+	</li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/zta0705gb12jjrv/59743CD9-FAFB-4894-A0E4-738140FB3C72.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/jvdq8exzzkcaswr/59743CD9-FAFB-4894-A0E4-738140FB3C72%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>3</span>
+			</a>
+		</div>
+	</li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/v4fvy7dwxk7rxpi/0A45816C-F1B9-4B92-8FC7-9EFD9928359C.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/jyw4ou4wx9o3xqj/0A45816C-F1B9-4B92-8FC7-9EFD9928359C%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>4</span>
+			</a>
+		</div>
+	</li>
+	<li>
+		<div class='image'>
+			<a href='https://www.dropbox.com/s/4byrjlz78ndjg90/74179837-B4FF-4BA1-A1A6-4679DB4CCDC5.jpg' target='_blank'>
+				<img src='https://www.dropbox.com/s/lusv1qotvm0cuc3/74179837-B4FF-4BA1-A1A6-4679DB4CCDC5%20%28Mobile%29.jpg?dl=1' />
+				<span class='imgTitle'>5</span>
+			</a>
+		</div>
+	</li>
+
+    </ul>
+
+	
+    <script src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
+    <script src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
+    <script src="http://tympanus.net/Development/GridLoadingEffects/js/classie.js"></script>
+    <script src="http://tympanus.net/Development/GridLoadingEffects/js/AnimOnScroll.js"></script>
+
+
+    <script>
+
+        new AnimOnScroll(document.getElementById('grid1'), {
+            minDuration: 0.4,
+            maxDuration: 0.7,
+            viewportFactor: 0.2
+        });
+
+
+var container = document.querySelector('#container');
+var msnry;
+
+	imagesLoaded( container, function() {
+
+		document.getElementsByTagName("body")[0].style.overflow = "auto";
+
+		msnry = new Masonry( container, {
+										  // options
+										  columnWidth: 44,
+										  itemSelector: '.item',
+										  gutter: 10
+										});
+	
+	} );
+		
+    </script>
+
+</body>
+</html>

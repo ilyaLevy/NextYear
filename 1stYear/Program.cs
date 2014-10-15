@@ -11,11 +11,19 @@ namespace _1stYear
 {
     class Program
     {
+        static string localDbFilename = @"C:\Dev\Quick\FirstYear\localDb.xml";
+
         static void Main(string[] args)
         {
+
             var allXOs = new List<TransactionObject>();
 
-            allXOs.AddRange(loadDbseedData());
+            if( !File.Exists(localDbFilename))
+            {
+                // load the old stuff only for when the localDB is not created yet
+                allXOs.AddRange(loadDbseedData());
+            }
+
             allXOs.AddRange(loadDynamicData());
 
             var flt = allXOs
@@ -27,6 +35,9 @@ namespace _1stYear
                             .ToList()
                             ;
 
+            var asdf1 = flt.Where(_ => _.ObjectID == new Guid("099C05BF-88A0-40FB-A19C-F58D08C0F652"))
+                    //.OrderBy(_ => _.Timestamp)
+                    .ToList();
             
             //var freshXOs = loadDynamicData();
 
@@ -35,22 +46,20 @@ namespace _1stYear
 
             var asdf = allXOs.Where(_ => _.PictureNote.Thumbnail == null || _.PictureNote.Thumbnail == "").ToList();
 
-
-            string dataFilename = @"C:\Dev\Quick\FirstYear\localDb.xml";
             
             // now update the local db - there is a chance the titles were changed
-            updateLocalDb(allXOs.Select(_ => new FYPhoto()
+            updateLocalDb(flt.Select(_ => new FYPhoto()
             {
                 title = _.Note,
                 id = _.PictureNote.FileName.ToString(),
-                thumbUrl = _.PictureNote.Thumbnail,
+                //thumbUrl = _.PictureNote.Thumbnail,
                 date = _.Time
-            }), dataFilename);
+            }), localDbFilename);
 
-            var templateFilename = @"C:\Dev\Quick\FirstYear\Ilya Daily, template.html";
-            var outputFilename = @"C:\Dev\Quick\FirstYear\Ilya Daily_1.html";
+            //Processor.buildHtml(dataFilename, @"C:\Dev\Quick\FirstYear\Ilya Daily, template.html", @"C:\Dev\Quick\FirstYear\IlyaDaily_A{0}.html");
+            //Processor.buildHtmls(dataFilename, @"C:\Dev\Quick\FirstYear\Ilya Daily, new template.html", @"C:\Dev\Quick\FirstYear\IlyaDaily_B{0}.html");
 
-            Processor.buildHtml(dataFilename, templateFilename, outputFilename);
+            Processor.buildHtmlsOld(localDbFilename, @"C:\Dev\Quick\FirstYear\Ilya Daily, old template.html", @"C:\Dev\Quick\FirstYear\IlyaDaily_C{0}.html");
         }
 
         private static IEnumerable<TransactionObject> loadDbseedData()
@@ -75,7 +84,12 @@ namespace _1stYear
 
             var allXos = devices.Select(d =>
             {
-                var logFiles = Directory.EnumerateFiles(sinkv2Root + d.Item2, "*.tlog");
+                var localDbLastWriteTime = new FileInfo(localDbFilename).LastWriteTime;
+
+                
+                var logFiles = Directory.EnumerateFiles(sinkv2Root + d.Item2, "*.tlog")
+                                        //.Where(_=> localDbLastWriteTime < new FileInfo(_).LastWriteTime )
+                                        .ToList();
 
                 return logFiles.Select((lf, i) =>
                 {
@@ -100,12 +114,13 @@ namespace _1stYear
 
             Console.WriteLine("Total XOs: {0}", allXos.Count());
 
-            var asdf = allXos.Where(_ => _.ObjectID == new Guid("CC585403-2DEB-450D-BD6F-CA5C9512B7A0"))
+            var asdf = allXos.Where(_ => _.ObjectID == new Guid("93592DFF-E519-47D7-B2FE-D511982CBCCA"))
                                 .OrderBy(_ => _.Timestamp)
                                 .ToList();
 
-            var freshPhotos = allXos.Where(_ => null != _.PictureNote
+            var pictureNotes = allXos.Where(_ => null != _.PictureNote
                                                 && null != _.PictureNote.Thumbnail)
+
                 ////.Where(_ => null != _ as XoJoy)
                 //            .GroupBy(_ => _.ObjectID)
                 //            .Select(_ => _.OrderByDescending(__ => __.Timestamp).First())
@@ -114,7 +129,7 @@ namespace _1stYear
                 //            .ToList()
                             ;
 
-            return freshPhotos;
+            return pictureNotes;
         }
 
         static void updateLocalDb(IEnumerable<FYPhoto> freshPhotos, string dataFilename)
@@ -127,6 +142,7 @@ namespace _1stYear
 	        {
                 var fp = freshPhotos.FirstOrDefault(_ => _.id == cp.id);
                 if( null != fp
+                    && !(String.IsNullOrEmpty(fp.title) && String.IsNullOrEmpty(cp.title))
                     && fp.title != cp.title)
                 {
                     // this one was!
@@ -148,13 +164,14 @@ namespace _1stYear
                 new XDocument(new XElement("root", curPhotos.Select(_ => _.toXElement()))).Save(dataFilename);
             }
 
-            // generate the missing URLs now
+            // generate the missing URLs now, id any
+            if (curPhotos.Where(_ => String.IsNullOrEmpty(_.url) || String.IsNullOrEmpty(_.thumbUrl) ).Any())
             {
                 var process = new Process() { StartInfo = new ProcessStartInfo( @"c:\Python27\python.exe",
                                                                                 @"C:\Dev\Quick\FirstYear\cli_client.py")
                                                                                 {
-                                                                                    UseShellExecute = false,
-                                                                                    RedirectStandardOutput = true,
+                                                                                    //UseShellExecute = false,
+                                                                                    //RedirectStandardOutput = true,
                                                                                 }
                                             };
 

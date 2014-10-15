@@ -1,0 +1,412 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Hello from Ilya</title>
+
+    <link rel="shortcut icon" href="http://fancyapps.com/favicon.ico">
+
+    <style>
+	.masonry {
+  background: #EEE;
+  max-width: 640px;
+}
+
+.item {
+
+	margin-bottom: 10px;
+}
+	
+	.small { height: 200px; }
+.medium { height: 300px; }
+.large { height: 400px; }
+.gigante { height: 500px; }
+
+
+.imgTitle {
+	position: absolute;
+	background-color: #A7DBD8;
+	color: #F38630;
+	top: 90%;
+	left: 15px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: 700;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+        #container {
+			visibility: hidden;
+            background-color: black;
+        }
+
+        #grid {
+            background-color: #69D2E7;
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="http://tympanus.net/Development/GridLoadingEffects/css/default.css" />
+    <link rel="stylesheet" type="text/css" href="http://tympanus.net/Development/GridLoadingEffects/css/component.css" />
+
+    <script src="http://tympanus.net/Development/GridLoadingEffects/js/modernizr.custom.js"></script>
+
+    <style>
+        body {
+            background: #111;
+            overflow: hidden;
+        }
+
+        .wrap {
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .translate {
+            -webkit-animation: translate 2000ms cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite;
+            animation: translate 2000ms cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite;
+            bottom: 0;
+            height: 14px;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 14px;
+        }
+
+        .scale {
+            -webkit-animation: scale 2000ms cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite;
+            animation: scale 2000ms cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite;
+            height: 100%;
+            width: 100%;
+        }
+
+        .wrap:nth-child(1) {
+            -webkit-transform: rotate(320deg);
+            -ms-transform: rotate(320deg);
+            transform: rotate(320deg);
+        }
+
+            .wrap:nth-child(1) .translate,
+            .wrap:nth-child(1) .scale {
+                -webkit-animation-delay: 0ms;
+                animation-delay: 0ms;
+            }
+
+            .wrap:nth-child(1) .scale {
+                background: #ccff66;
+            }
+
+        .wrap:nth-child(2) {
+            -webkit-transform: rotate(280deg);
+            -ms-transform: rotate(280deg);
+            transform: rotate(280deg);
+        }
+
+            .wrap:nth-child(2) .translate,
+            .wrap:nth-child(2) .scale {
+                -webkit-animation-delay: -222.22222ms;
+                animation-delay: -222.22222ms;
+            }
+
+            .wrap:nth-child(2) .scale {
+                background: #66ffcc;
+            }
+
+        .wrap:nth-child(3) {
+            -webkit-transform: rotate(240deg);
+            -ms-transform: rotate(240deg);
+            transform: rotate(240deg);
+        }
+
+            .wrap:nth-child(3) .translate,
+            .wrap:nth-child(3) .scale {
+                -webkit-animation-delay: -444.44444ms;
+                animation-delay: -444.44444ms;
+            }
+
+            .wrap:nth-child(3) .scale {
+                background: #6666ff;
+            }
+
+        .wrap:nth-child(4) {
+            -webkit-transform: rotate(200deg);
+            -ms-transform: rotate(200deg);
+            transform: rotate(200deg);
+        }
+
+            .wrap:nth-child(4) .translate,
+            .wrap:nth-child(4) .scale {
+                -webkit-animation-delay: -666.66667ms;
+                animation-delay: -666.66667ms;
+            }
+
+            .wrap:nth-child(4) .scale {
+                background: #ff66cc;
+            }
+
+        .wrap:nth-child(5) {
+            -webkit-transform: rotate(160deg);
+            -ms-transform: rotate(160deg);
+            transform: rotate(160deg);
+        }
+
+            .wrap:nth-child(5) .translate,
+            .wrap:nth-child(5) .scale {
+                -webkit-animation-delay: -888.88889ms;
+                animation-delay: -888.88889ms;
+            }
+
+            .wrap:nth-child(5) .scale {
+                background: #ffcc66;
+            }
+
+        .wrap:nth-child(6) {
+            -webkit-transform: rotate(120deg);
+            -ms-transform: rotate(120deg);
+            transform: rotate(120deg);
+        }
+
+            .wrap:nth-child(6) .translate,
+            .wrap:nth-child(6) .scale {
+                -webkit-animation-delay: -1111.11111ms;
+                animation-delay: -1111.11111ms;
+            }
+
+            .wrap:nth-child(6) .scale {
+                background: #66ff66;
+            }
+
+        .wrap:nth-child(7) {
+            -webkit-transform: rotate(80deg);
+            -ms-transform: rotate(80deg);
+            transform: rotate(80deg);
+        }
+
+            .wrap:nth-child(7) .translate,
+            .wrap:nth-child(7) .scale {
+                -webkit-animation-delay: -1333.33333ms;
+                animation-delay: -1333.33333ms;
+            }
+
+            .wrap:nth-child(7) .scale {
+                background: #66ccff;
+            }
+
+        .wrap:nth-child(8) {
+            -webkit-transform: rotate(40deg);
+            -ms-transform: rotate(40deg);
+            transform: rotate(40deg);
+        }
+
+            .wrap:nth-child(8) .translate,
+            .wrap:nth-child(8) .scale {
+                -webkit-animation-delay: -1555.55556ms;
+                animation-delay: -1555.55556ms;
+            }
+
+            .wrap:nth-child(8) .scale {
+                background: #cc66ff;
+            }
+
+        .wrap:nth-child(9) {
+            -webkit-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+            .wrap:nth-child(9) .translate,
+            .wrap:nth-child(9) .scale {
+                -webkit-animation-delay: -1777.77778ms;
+                animation-delay: -1777.77778ms;
+            }
+
+            .wrap:nth-child(9) .scale {
+                background: #ff6666;
+            }
+
+        @-webkit-keyframes translate {
+            0% {
+                -webkit-transform: translate3d(-600%, 0, 0);
+                transform: translate3d(-600%, 0, 0);
+            }
+
+            50% {
+                -webkit-transform: translate3d(600%, 0, 0);
+                transform: translate3d(600%, 0, 0);
+            }
+
+            100% {
+                -webkit-transform: translate3d(-600%, 0, 0);
+                transform: translate3d(-600%, 0, 0);
+            }
+        }
+
+        @keyframes translate {
+            0% {
+                -webkit-transform: translate3d(-600%, 0, 0);
+                transform: translate3d(-600%, 0, 0);
+            }
+
+            50% {
+                -webkit-transform: translate3d(600%, 0, 0);
+                transform: translate3d(600%, 0, 0);
+            }
+
+            100% {
+                -webkit-transform: translate3d(-600%, 0, 0);
+                transform: translate3d(-600%, 0, 0);
+            }
+        }
+
+        @-webkit-keyframes scale {
+            0% {
+                -webkit-transform: translateZ(0) scale(0.75, 1);
+                transform: translateZ(0) scale(0.75, 1);
+            }
+
+            25% {
+                -webkit-transform: translateZ(0) scale(1.5, 0.5);
+                transform: translateZ(0) scale(1.5, 0.5);
+            }
+
+            50% {
+                -webkit-transform: translateZ(0) scale(0.75, 1);
+                transform: translateZ(0) scale(0.75, 1);
+            }
+
+            75% {
+                -webkit-transform: translateZ(0) scale(1.5, 0.5);
+                transform: translateZ(0) scale(1.5, 0.5);
+            }
+
+            100% {
+                -webkit-transform: translateZ(0) scale(0.75, 1);
+                transform: translateZ(0) scale(0.75, 1);
+            }
+        }
+
+        @keyframes scale {
+            0% {
+                -webkit-transform: translateZ(0) scale(0.75, 1);
+                transform: translateZ(0) scale(0.75, 1);
+            }
+
+            25% {
+                -webkit-transform: translateZ(0) scale(1.5, 0.5);
+                transform: translateZ(0) scale(1.5, 0.5);
+            }
+
+            50% {
+                -webkit-transform: translateZ(0) scale(0.75, 1);
+                transform: translateZ(0) scale(0.75, 1);
+            }
+
+            75% {
+                -webkit-transform: translateZ(0) scale(1.5, 0.5);
+                transform: translateZ(0) scale(1.5, 0.5);
+            }
+
+            100% {
+                -webkit-transform: translateZ(0) scale(0.75, 1);
+                transform: translateZ(0) scale(0.75, 1);
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div id="loading">
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+        <div class='wrap'>
+            <div class='translate'>
+                <div class='scale'></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <ul class="grid effect-4" id="grid"> -->
+	<div id="container">
+
+        <!--##ADD ITEMS HERE##-->
+
+    </div>
+
+    <script src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
+    <script src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
+    <script src="http://tympanus.net/Development/GridLoadingEffects/js/classie.js"></script>
+    <script src="http://tympanus.net/Development/GridLoadingEffects/js/AnimOnScroll.js"></script>
+
+    <script>
+		var container = document.querySelector('#container');
+
+		var msnry;
+
+		imagesLoaded( container, function() {
+
+			document.getElementById('container').style.visibility = "visible";
+
+			document.getElementsByTagName("body")[0].style.overflow = "auto";
+			msnry = new Masonry( container, {
+											  // options
+											  columnWidth: 44,
+											  itemSelector: '.item',
+											  gutter: 10
+											});
+		});
+
+        new AnimOnScroll(document.getElementById('grid'), {
+            minDuration: 0.4,
+            maxDuration: 0.7,
+            viewportFactor: 0.2
+        });
+
+    </script>
+
+</body>
+</html>
